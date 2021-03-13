@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 public class LC0007_ReverInteger {
 	public int reverse(int x) {

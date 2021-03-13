@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 public class LC1663_SmallestStringWithAGivenNumericValue {
     public String getSmallestString(int n, int k) {

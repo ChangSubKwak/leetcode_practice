@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 public class LC0011_ContainerWithMostWater {
     public int maxArea(int[] height) {

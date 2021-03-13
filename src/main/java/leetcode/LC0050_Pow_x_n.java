@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 public class LC0050_Pow_x_n {
     public double myPow(double x, int n) {

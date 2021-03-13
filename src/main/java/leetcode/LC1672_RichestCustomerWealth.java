@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 public class LC1672_RichestCustomerWealth {
     public int maximumWealth(int[][] accounts) {

@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 /*
 class LC0016_Data implements Comparable<LC0016_Data>{

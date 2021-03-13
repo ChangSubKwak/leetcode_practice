@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 // ?•´ê²? ëª»í•¨
 // O(n^2)

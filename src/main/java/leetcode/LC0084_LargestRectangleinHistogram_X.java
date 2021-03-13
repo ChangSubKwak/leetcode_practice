@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 /*
  * 각 높이별로 영향을 미치는 인덱스 값을 구하는 것이 핵심 

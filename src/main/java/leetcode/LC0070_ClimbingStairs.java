@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 public class LC0070_ClimbingStairs {
     public int climbStairs(int n) {

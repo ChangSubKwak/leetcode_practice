@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 public class LC0101_SymmetricTree_X {
 	public boolean recursive(TreeNode left, TreeNode right) {

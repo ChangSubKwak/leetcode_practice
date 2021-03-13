@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 public class LC1664_WaystoMakeaFairArray {
     public int waysToMakeFair(int[] nums) {

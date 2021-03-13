@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 public class LC0004_MedianofTwoSortedArrays {
     public double findMedianSortedArrays2(int[] A, int[] B) {

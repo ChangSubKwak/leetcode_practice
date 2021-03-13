@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 public class LC1576_ReplaceAllstoAvoidConsecutiveRepeatingCharacters {
     public String modifyString(String s) {

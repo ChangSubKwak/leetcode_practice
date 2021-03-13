@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 // 62, 70, 509
 public class LC0639_DecodeWaysII_X {

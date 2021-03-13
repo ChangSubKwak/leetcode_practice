@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 public class LC0069_Sqrtx {
     public int mySqrt(int x) {

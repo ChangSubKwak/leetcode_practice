@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 public class LC0074_Searcha2DMatrix {
     public boolean searchMatrix(int[][] matrix, int target) {

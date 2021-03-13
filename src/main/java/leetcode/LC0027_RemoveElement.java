@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 public class LC0027_RemoveElement {
     public int removeElement(int[] nums, int val) {

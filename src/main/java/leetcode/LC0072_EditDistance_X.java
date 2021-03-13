@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 public class LC0072_EditDistance_X {
     public int minDistance(String word1, String word2) {

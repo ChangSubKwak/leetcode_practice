@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 public class LC0097_InterleavingString_X {
     public boolean isInterleave(String s1, String s2, String s3) {

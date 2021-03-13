@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 public class LC0028_ImplementstrStr {
     public int strStr(String haystack, String needle) {

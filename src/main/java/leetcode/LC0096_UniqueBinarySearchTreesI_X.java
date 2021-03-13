@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 public class LC0096_UniqueBinarySearchTreesI_X {
 	public int numTrees(int n) {

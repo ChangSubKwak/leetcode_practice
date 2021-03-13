@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 public class LC0029_DivideTwoIntegers {
     public int divide(int dividend, int divisor) {

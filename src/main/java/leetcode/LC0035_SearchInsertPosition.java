@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 public class LC0035_SearchInsertPosition {
     public int searchInsert(int[] nums, int target) {

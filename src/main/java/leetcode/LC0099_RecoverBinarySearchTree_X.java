@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 public class LC0099_RecoverBinarySearchTree_X {
     TreeNode f = null;

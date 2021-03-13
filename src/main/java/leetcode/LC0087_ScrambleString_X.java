@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 public class LC0087_ScrambleString_X {
     public boolean isScramble(String s1, String s2) {

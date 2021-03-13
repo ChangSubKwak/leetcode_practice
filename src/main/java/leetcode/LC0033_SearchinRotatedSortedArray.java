@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 public class LC0033_SearchinRotatedSortedArray {
 	public int binsearch(int[] array, int start, int end, int el) {

@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 public class LC1678_GoalParserInterpretation {
     public String interpret(String command) {

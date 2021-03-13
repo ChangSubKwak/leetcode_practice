@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 // Cannot solve
 public class LC0010_RegularExpressioniMatching_X {
     public boolean isMatch(String s, String p) {

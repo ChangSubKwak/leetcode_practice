@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 public class LC1680_ConcatenationofConsecutiveBinaryNumbers {
     public int concatenatedBinary(int n) {

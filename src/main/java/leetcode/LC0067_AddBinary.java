@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 public class LC0067_AddBinary {
 	  public String addBinary(String a, String b) {

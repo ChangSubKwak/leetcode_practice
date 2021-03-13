@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 public class LC0081_SearchinRotatedSortedArrayII {
 	public boolean myBS(int[] array, int target, int left, int right) {

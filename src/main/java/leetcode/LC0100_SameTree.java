@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 public class LC0100_SameTree {
     public boolean isSameTree(TreeNode p, TreeNode q) {

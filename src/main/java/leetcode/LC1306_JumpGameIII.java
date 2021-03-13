@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 public class LC1306_JumpGameIII {
 	public boolean execute(boolean[] isVisit, int[] arr, int start) {

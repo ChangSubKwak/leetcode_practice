@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 public class LC0098_ValidateBinarySearchTree_X {
     public boolean isValidBST(TreeNode root, int min, int max) {
