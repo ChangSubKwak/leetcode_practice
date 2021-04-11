@@ -1,9 +1,52 @@
 package leetcode;
 
 import java.util.Arrays;
+import java.util.LinkedList;
 
 public class LC0239_SlidingWindowMaximum {
-	//*
+	
+    LinkedList<Integer> list = new LinkedList<>();
+    int[] globalNums;
+    
+    public void checkNDelList(int i, int k) {
+    	// 범위를 벗어난 것에 대한 제거 처리
+        if (!list.isEmpty() && list.getFirst() == i - k)
+            list.removeFirst();
+        
+        // 새롭게 추가될 값보다 작읍 모든 것을 제거하기
+        while (!list.isEmpty() && globalNums[i] > globalNums[list.getLast()])
+            list.removeLast();
+    }
+    
+    public int[] maxSlidingWindow(int[] nums, int k) {
+        int n = nums.length;
+        if (n == 0 || k == 0) return new int[0];
+        if (k == 1) return nums;
+        
+        globalNums = nums;
+        int maxIdx = 0;
+        for (int i = 0 ; i < k ; i++) {
+            checkNDelList(i, k);
+            list.addLast(i);
+            if (nums[i] > nums[maxIdx])
+                maxIdx = i;
+        }
+        
+        int[] output = new int [n - k + 1];
+        output[0] = nums[maxIdx];
+        
+        for (int i = k ; i < n ; i++) {
+            checkNDelList(i, k);
+            list.addLast(i);
+            output[i - k + 1] = nums[list.getFirst()];		// 최대값은 list의 첫번째 인덱스에 해당하는 값임
+        }
+        
+        return output;
+    }
+	
+	
+	
+	/*
     public int[] maxSlidingWindow(int[] nums, int k) {
         int len = nums.length;
         int max = 0;
@@ -39,6 +82,7 @@ public class LC0239_SlidingWindowMaximum {
         return sw;
     }
     //*/
+    //*/
 	
 	/*
 	public int[] maxSlidingWindow(int[] a, int k) {		
@@ -71,6 +115,7 @@ public class LC0239_SlidingWindowMaximum {
 	//*/
 
 	public static void main(String[] args) {
+		//System.arraycopy(src, srcPos, dest, destPos, length);
 		LC0239_SlidingWindowMaximum t = new LC0239_SlidingWindowMaximum();
 //		System.out.println(
 //				Arrays.toString(t.maxSlidingWindow(new int[] {9,10,9,-7,-4,-8,2,-6}, 5))

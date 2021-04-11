@@ -1,6 +1,14 @@
 package leetcode;
 
 class Solution {
+    public void printNode(ListNode l) {
+        while(l != null) {
+            System.out.print(l.val + " ");
+            l = l.next;
+        }
+        System.out.println();
+    }
+	
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         if (l1.val == 0 && l1.next == null)      return l2;
         else if (l2.val == 0 && l2.next == null) return l1;
