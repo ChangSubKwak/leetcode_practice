@@ -1,48 +1,48 @@
 package leetcode;
 
 public class LC0086_PartitionList {
-    public ListNode partition(ListNode head, int x) {
-    	if (head == null || head.next == null) return head;
-    	
-    	ListNode dummy = new ListNode(0);
-        ListNode prevS = null;
-        ListNode currS = null;
-        ListNode prevI = null;
-        ListNode currI = null;
-        
-        dummy.next = head;
-        
-        ListNode t = dummy;
-        while(t.next != null && x > (int)( t.next.val))
-        	t = t.next;
-        prevS = t;
-        currS = t.next;
-        
-        while(t.next != null) {
-        	t= currS;
-        	
-        	while(t.next != null && x <= (int) t.next.val) 
-        		t = t.next;
-        	prevI = t;
-        	currI = t.next;
-        	
-        	if (prevI == null || currI == null) return dummy.next;
-        	
-        	// ³ëµå ²÷±â
-        	prevI.next = currI.next;
-        	
-        	// ³ëµå ¿¬°á
-        	currI.next = currS;
-        	prevS.next = currI;
-        	prevS = prevS.next;
-        	
-        	System.out.print("debug : ");
-        	ListNode.print(dummy.next);
-        }
-        
-    	return dummy.next;
-    }
-	
+	public ListNode partition(ListNode head, int x) {
+		if (head == null || head.next == null) return head;
+
+		ListNode dummy = new ListNode(0);
+		ListNode prevS = null;
+		ListNode currS = null;
+		ListNode prevI = null;
+		ListNode currI = null;
+
+		dummy.next = head;
+
+		ListNode t = dummy;
+		while(t.next != null && x > (int)( t.next.val))
+			t = t.next;
+		prevS = t;
+		currS = t.next;
+
+		while(t.next != null) {
+			t= currS;
+
+			while(t.next != null && x <= (int) t.next.val)
+				t = t.next;
+			prevI = t;
+			currI = t.next;
+
+			if (prevI == null || currI == null) return dummy.next;
+
+			// ë…¸ë“œ ëŠê¸°
+			prevI.next = currI.next;
+
+			// ë…¸ë“œ ì—°ê²°
+			currI.next = currS;
+			prevS.next = currI;
+			prevS = prevS.next;
+
+			System.out.print("debug : ");
+			ListNode.print(dummy.next);
+		}
+
+		return dummy.next;
+	}
+
 	public static void main(String[] args) {
 		LC0086_PartitionList t = new LC0086_PartitionList();
 //		ListNode l = ListNode.setArray(new int[] {1,4,3,2,5,2});

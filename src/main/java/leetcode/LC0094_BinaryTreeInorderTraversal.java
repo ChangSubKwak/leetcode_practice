@@ -7,7 +7,7 @@ import java.util.Set;
 import java.util.Stack;
 
 public class LC0094_BinaryTreeInorderTraversal {
-	// Âü°í
+	// ì°¸ê³ 
 	/*
     public List < Integer > inorderTraversal(TreeNode root) {
         List < Integer > res = new ArrayList < > ();
@@ -25,38 +25,38 @@ public class LC0094_BinaryTreeInorderTraversal {
         return res;
     }
 	//*/
-	
-	
-    public List<Integer> inorderTraversal(TreeNode root) {
-    	List<Integer> res = new ArrayList<>();
-    	Stack<TreeNode> stack = new Stack<>();
-    	Set<TreeNode> visit = new HashSet<>();
-    	
-    	if (root == null) return res; 
-    	
-    	stack.add(root);
-    	TreeNode t = null;
-    	while(!stack.isEmpty()) {
-    		t = stack.peek();
-    		if (t.left != null && !visit.contains(t.left)) {
-    			stack.add(t.left);
-    			continue;
-    		}
-    		
-    		if (!visit.contains(t))
-    			res.add(t.val);
-   			visit.add(t);
-    		
-    		if (t.right != null && !visit.contains(t.right)) {
-    			stack.add(t.right);
-    			continue;
-    		}
-    		
-    		visit.add(stack.pop());
-    	}
-    	return res;
-    }
-	
+
+
+	public List<Integer> inorderTraversal(TreeNode root) {
+		List<Integer> res = new ArrayList<>();
+		Stack<TreeNode> stack = new Stack<>();
+		Set<TreeNode> visit = new HashSet<>();
+
+		if (root == null) return res;
+
+		stack.add(root);
+		TreeNode t = null;
+		while(!stack.isEmpty()) {
+			t = stack.peek();
+			if (t.left != null && !visit.contains(t.left)) {
+				stack.add(t.left);
+				continue;
+			}
+
+			if (!visit.contains(t))
+				res.add(t.val);
+			visit.add(t);
+
+			if (t.right != null && !visit.contains(t.right)) {
+				stack.add(t.right);
+				continue;
+			}
+
+			visit.add(stack.pop());
+		}
+		return res;
+	}
+
 	public static void main(String[] args) {
 		LC0094_BinaryTreeInorderTraversal t = new LC0094_BinaryTreeInorderTraversal();
 		TreeNode tn3 = new TreeNode(3);
