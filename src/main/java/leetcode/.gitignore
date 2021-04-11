@@ -24,3 +24,5 @@ gradle-app.setting
 bin/
 src/main/java/trash
 src/main/java/temp
+
+.idea
