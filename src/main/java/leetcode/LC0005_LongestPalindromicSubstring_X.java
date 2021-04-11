@@ -1,6 +1,5 @@
 package leetcode;
 
-// ?•´ê²? ëª»í•¨
 // O(n^2)
 public class LC0005_LongestPalindromicSubstring_X {
 	public String longestPalindrome(String s) {
