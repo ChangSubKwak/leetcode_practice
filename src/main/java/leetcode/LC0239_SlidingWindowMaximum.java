@@ -13,7 +13,7 @@ public class LC0239_SlidingWindowMaximum {
         if (!list.isEmpty() && list.getFirst() == i - k)
             list.removeFirst();
 
-        // 새롭게 추가될 값보다 작읍 모든 것을 제거하기
+        // 새롭게 추가될 값보다 작은 모든 것을 제거하기
         while (!list.isEmpty() && globalNums[i] > globalNums[list.getLast()])
             list.removeLast();
     }
