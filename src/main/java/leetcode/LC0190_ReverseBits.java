@@ -7,6 +7,6 @@ public class LC0190_ReverseBits {
     
 	public static void main(String[] args) {
 		LC0190_ReverseBits t = new LC0190_ReverseBits();
-		System.out.println(t.reverseBits(43261596));
+		System.out.println(t.reverseBits(43261596)); 
 	}
 }
