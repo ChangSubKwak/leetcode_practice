@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class LC0179_LargestNumber {
+public class LC0179_LargestNumber_X {
     public String largestNumber(int[] nums) {
     	List<String> list = new ArrayList<>();
     	for (int i = 0; i < nums.length; i++) {
@@ -36,7 +36,7 @@ public class LC0179_LargestNumber {
     }
     
 	public static void main(String[] args) {
-		LC0179_LargestNumber t = new LC0179_LargestNumber();
+		LC0179_LargestNumber_X t = new LC0179_LargestNumber_X();
 		System.out.println(t.largestNumber(new int[] {3, 30, 34, 5, 9})); 
 	}
 }
