@@ -4,15 +4,16 @@ import java.util.Arrays;
 
 public class LC0189_RotateArray {
     public void rotate(int[] nums, int k) {
-    	int index = 0;
-    	int extra = nums[index];
+    	// 전체를 거꾸로
+    	// 1, 2, 3, 4, 5, 6, 7 --> 7, 6, 5, 4, 3, 2, 1
+
+    	// 0 부터 k -1 번째 까지 거꾸로
+    	// 5, 6, 7, 4, 3, 2, 1
+
+    	// k번째 부터 마지막 까지 거꾸로
+    	// 5, 6, 7, 1, 2, 3, 4
     	
-        for (int i = 0; i < nums.length; i++) {
-        	index = (index + k) % nums.length;
-        	int temp = nums[index];
-        	nums[index] = extra;
-        	extra = temp;
-        }
+
     }
     
 	public static void main(String[] args) {
