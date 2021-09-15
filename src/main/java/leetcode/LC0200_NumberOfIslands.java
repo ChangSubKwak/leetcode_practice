@@ -14,7 +14,7 @@ public class LC0200_NumberOfIslands {
 			return;
 		}
 		
-		if (grid[y][x] == 0) {
+		if (grid[y][x] == '0') {
 			return;
 		}
 		
