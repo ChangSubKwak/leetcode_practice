@@ -57,7 +57,7 @@ public class LC0126_WordLadderII {
     			if (chs[i] == ch) {
     				continue;
     			}
-    			char old_ch = chs[i];
+    			char old_ch = chs[i];			// why does it assign to old_ch?
     			chs[i] = ch;
     			if (dict.contains(String.valueOf(chs))) {
     				res.add(String.valueOf(chs));
