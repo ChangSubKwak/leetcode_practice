@@ -43,6 +43,22 @@ public class LC0126_WordLadderII {
     			String cur = queue.poll();
     			int curDistance = distance.get(cur);
     			List<String> neighbors = getNeighbors(cur, dict);
+    			
+    			for (String neighbor: neighbors) {
+    				nodeNeighbors.get(cur).add(neighbor);
+    				if (!distance.containsKey(neighbor)) {
+    					distance.put(neighbor, curDistance + 1);
+    					if (endWord.equals(neighbor)) {
+    						foundEnd = true;
+    					} else {
+    						queue.offer(neighbor);
+    					}
+    				}
+    			}
+    		}
+    		
+    		if (foundEnd) {
+    			break;
     		}
     	}
     	
@@ -58,6 +74,7 @@ public class LC0126_WordLadderII {
     				continue;
     			}
     			char old_ch = chs[i];			// why does it assign to old_ch?
+    											// use old_ch to recover original char 
     			chs[i] = ch;
     			if (dict.contains(String.valueOf(chs))) {
     				res.add(String.valueOf(chs));
