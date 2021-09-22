@@ -1,6 +1,7 @@
 package leetcode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -16,14 +17,13 @@ public class LC0126_WordLadderII {
     	List<List<String>> res = new ArrayList<List<String>>();
     	Map<String, ArrayList<String>> nodeNeighbors = new HashMap<String, ArrayList<String>>();
     	Map<String, Integer> distance = new HashMap<String, Integer>();
+    	ArrayList<String> solution = new ArrayList<>();
     	
     	dict.add(beginWord);
     	bfs(beginWord, endWord, dict, nodeNeighbors, distance);
+    	dfs(beginWord, endWord, dict, nodeNeighbors, distance, solution, res);
     	
-        // bfs
-    	// dfs
-    	
-    	return null;
+    	return res;
     }
     
     private void bfs(String beginWord, String endWord, Set<String> dict, Map<String, ArrayList<String>> nodeNeighbors, Map<String, Integer> distance) {
@@ -85,10 +85,22 @@ public class LC0126_WordLadderII {
     	
     	return res;
     }
+    
+    private void dfs(String startWord, String endWord, Set<String> dict, Map<String, ArrayList<String>> nodeNeighbors, Map<String, Integer> distance, ArrayList<String> solution, List<List<String>> res) {
+    	solution.add(startWord);
+    	if (endWord.equals(startWord)) {
+    		res.add(new ArrayList<String>(solution));
+    	} else {
+    		for (String next : nodeNeighbors.get(startWord)) {
+    			if (distance.get(next) == distance.get(startWord) + 1) {
+    				dfs(next, endWord, dict, nodeNeighbors, distance, solution, res);
+    			}
+    		}
+    	}
+    }
 	
 	public static void main(String[] args) {
 		LC0126_WordLadderII t = new LC0126_WordLadderII();
-		t.findLadders("", "", null);
-
+		System.out.println(t.findLadders("hit", "cog", Arrays.asList("hot","dot","dog","lot","log","cog")));
 	}
 }
