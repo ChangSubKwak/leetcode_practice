@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
 
-public class LC0126_WordLadderII {
+public class LC0126_WordLadderII_X {
     public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
     	// init
     	Set<String> dict = new HashSet<String>(wordList);
@@ -55,13 +55,11 @@ public class LC0126_WordLadderII {
     					}
     				}
     			}
-    		}
-    		
-    		if (foundEnd) {
-    			break;
+        		if (foundEnd) {
+        			break;
+        		}
     		}
     	}
-    	
     }
     
     private List<String> getNeighbors(String node, Set<String> dict) {
@@ -97,10 +95,11 @@ public class LC0126_WordLadderII {
     			}
     		}
     	}
+    	solution.remove(solution.size() - 1);
     }
 	
 	public static void main(String[] args) {
-		LC0126_WordLadderII t = new LC0126_WordLadderII();
+		LC0126_WordLadderII_X t = new LC0126_WordLadderII_X();
 		System.out.println(t.findLadders("hit", "cog", Arrays.asList("hot","dot","dog","lot","log","cog")));
 	}
 }
