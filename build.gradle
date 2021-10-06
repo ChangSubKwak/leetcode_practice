@@ -27,7 +27,16 @@ dependencies {
     // Use JUnit test framework
     // testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.0-M1'
     // testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.8.0-M1'
+<<<<<<< HEAD
     implementation 'org.junit.jupiter:junit-jupiter-engine:5.8.0-M1'
     implementation 'org.junit.jupiter:junit-jupiter-api:5.8.0-M1'
     implementation 'org.assertj:assertj-core:3.15.0'
+=======
+    implementation 'org.junit.jupiter:junit-jupiter:5.6.0'
+    implementation 'org.assertj:assertj-core:3.15.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.6.0'
+    testImplementation 'org.assertj:assertj-core:3.15.0'
+    // implementation 'org.junit.jupiter:junit-jupiter-engine:5.8.0-M1'
+    // implementation 'org.junit.jupiter:junit-jupiter-api:5.8.0-M1'
+>>>>>>> 3f092294119518fbd082d7410b944f6f3e0948e1
 }
