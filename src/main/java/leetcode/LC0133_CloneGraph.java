@@ -25,10 +25,9 @@ public class LC0133_CloneGraph {
 	}
 
 	Map<Integer, Node> map = new HashMap<>();
-	
-	
-    public Node cloneGraph(Node node) {
-    	if (node == null) {
+
+	private Node helper(Node node) {
+		if (node == null) {
     		return null;
     	}
     	
@@ -41,6 +40,10 @@ public class LC0133_CloneGraph {
     	}
     	
     	return cloneNode;
+	}
+	
+    public Node cloneGraph(Node node) {
+    	return helper(node);
     }
     
     public void executeTest() {
