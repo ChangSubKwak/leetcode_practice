@@ -1,32 +1,69 @@
 package leetcode;
 
-import java.util.ArrayList;
-import java.util.List;
-
-// Check if Numbers Are Ascending in a Sentence
 public class LC2043_SimpleBankSystem {
-    public boolean areNumbersAscending(String s) {
-    	String[] array = s.split(" ");
-    	List<Integer> list = new ArrayList<>();
-    	for (int i = 0; i < array.length; i++) {
-    		if (array[i].matches("\\d+") && array[i].charAt(0) != '0') {
-    			list.add(Integer.valueOf(array[i]));
-    			int size = list.size();
-    			if (size > 1 && list.get(size - 2) >= list.get(size - 1)) {
-    				return false;
-    			}
-    		}
-    	}
-    	
-    	return true;
-    }
-	
+	class Bank {
+		private long[] balance;
 
-	public static void main(String[] args) {
-		LC2043_SimpleBankSystem t = new LC2043_SimpleBankSystem();
-		System.out.println(t.areNumbersAscending("1 box has 3 blue 4 red 6 green and 12 yellow marbles"));
-		System.out.println(t.areNumbersAscending("hello world 5 x 5"));
-		System.out.println(t.areNumbersAscending("sunset is at 7 51 pm overnight lows will be in the low 50 and 60 s"));
-		System.out.println(t.areNumbersAscending("4 5 11 26"));
+		public Bank(long[] balance) {
+			this.balance = balance;
+		}
+
+		public boolean transfer(int account1, int account2, long money) {
+			try {
+				if (account1 < 1 || balance.length < account1)
+					return false;
+				if (account2 < 1 || balance.length < account2)
+					return false;
+				if (money < 0 || 1_000_000_000_000L < money)
+					return false;
+
+				if (balance[account1 - 1] < money) {
+					return false;
+				}
+				balance[account1 - 1] -= money;
+				balance[account2 - 1] += money;
+			} catch (Exception e) {
+				return false;
+			}
+			return true;
+		}
+
+		public boolean deposit(int account, long money) {
+			try {
+				if (account < 1 || balance.length < account)
+					return false;
+				if (money < 0 || 1_000_000_000_000L < money)
+					return false;
+
+				balance[account - 1] += money;
+			} catch (Exception e) {
+				return false;
+			}
+			return true;
+		}
+
+		public boolean withdraw(int account, long money) {
+			try {
+				if (account < 1 || balance.length < account)
+					return false;
+				if (money < 0 || 1_000_000_000_000L < money)
+					return false;
+
+				if (balance[account - 1] < money) {
+					return false;
+				}
+				balance[account - 1] -= money;
+			} catch (Exception e) {
+				return false;
+			}
+			return true;
+		}
 	}
+
+//	public static void main(String[] args) {
+//		String[] operation = new String[] {"Bank", "withdraw", "transfer", "deposit", "transfer", "withdraw"};
+//		long[] balance = new long[] {10, 100, 20, 50, 30};
+//		
+//		Bank obj = new Bank(balance);
+//	}
 }
