@@ -24,26 +24,28 @@ public class LC0133_CloneGraph {
 	    }
 	}
 
-	Map<Integer, Node> map = new HashMap<>();
-
-	private Node helper(Node node) {
-		if (node == null) {
-    		return null;
-    	}
-    	
-    	Node cloneNode = new Node();
+    private List<Integer> visitList;
+    private Map<Integer, Node> map;
+    
+    public void dfs(Node node) {
+        if (visitList.contains(node.val)) {
+            return;
+        }
+        
+        Node cloneNode = new Node();
     	cloneNode.val = node.val;
-    	
-    	List<Node> neighborsNode = node.neighbors;
-    	for(int i = 0; i < neighborsNode.size(); i++) {
-    		cloneNode.neighbors.add(neighborsNode.get(i));
+    	for (int i = 0; i < node.neighbors.size(); i++) {
+    		cloneNode.neighbors.add(node.neighbors.get(i) );
     	}
-    	
-    	return cloneNode;
-	}
-	
+        //map.put(cloneNode.val, )
+    }
+    
     public Node cloneGraph(Node node) {
-    	return helper(node);
+    	visitList = new ArrayList<>();
+        map = new HashMap<>();
+        dfs(node);
+    	
+		return null;
     }
     
     public void executeTest() {
