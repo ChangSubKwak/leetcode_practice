@@ -1,5 +1,4 @@
-import java.util.Map.Entry;
-import java.util.*;
+package leetcode;
 
 public class LC0441_ArrangingCoins {
     public int arrangeCoins(int n) {
