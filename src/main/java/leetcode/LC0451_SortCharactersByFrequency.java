@@ -1,8 +1,8 @@
 import java.util.Map.Entry;
 import java.util.*;
 
-class Solution {
-    public String frequencySort(String s) {
+public class LC0451_SortCharactersByFrequency {
+	public String frequencySort(String s) {
         Map<Character, Integer> map = new HashMap<>();
 
         for (int i = 0; i < s.length(); i++) {
