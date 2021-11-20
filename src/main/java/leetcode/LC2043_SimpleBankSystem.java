@@ -60,10 +60,10 @@ public class LC2043_SimpleBankSystem {
 		}
 	}
 
-	public static void main(String[] args) {
-		String[] operation = new String[] {"Bank", "withdraw", "transfer", "deposit", "transfer", "withdraw"};
-		long[] balance = new long[] {10, 100, 20, 50, 30};
-		
-		Bank obj = new Bank(balance);
-	}
+//	public static void main(String[] args) {
+//		String[] operation = new String[] {"Bank", "withdraw", "transfer", "deposit", "transfer", "withdraw"};
+//		long[] balance = new long[] {10, 100, 20, 50, 30};
+//		
+//		Bank obj = new Bank(balance);
+//	}
 }
