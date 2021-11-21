@@ -1,8 +1,8 @@
 package leetcode;
 
-import static org.junit.Assert.assertArrayEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class TreeNodeTest {
 	//@Test
@@ -21,8 +21,8 @@ public class TreeNodeTest {
 		
 		System.out.println(root.executeAndGetInOrderResult());
 		System.out.println(root.executeAndGetPreOrderResult());
-		assertArrayEquals(new int[] {9, 3, 15, 20, 7}, root.executeAndGetInOrderResult().stream().mapToInt(i->i).toArray());
-		assertArrayEquals(new int[] {3, 9, 20, 15, 7}, root.executeAndGetPreOrderResult().stream().mapToInt(i->i).toArray());
+		assertThat(root.executeAndGetInOrderResult().stream().mapToInt(i->i).toArray()).containsExactly(9, 3, 15, 20, 7);
+		assertThat(root.executeAndGetInOrderResult().stream().mapToInt(i->i).toArray()).containsExactly(3, 9, 20, 15, 7);
 	}
 	
 //	@Test
@@ -35,7 +35,8 @@ public class TreeNodeTest {
 		root.right = t2;
 		
 		System.out.println(root.executeAndGetInOrderResult());
-		assertArrayEquals(new int[] {2, 1, 3}, root.executeAndGetInOrderResult().stream().mapToInt(i->i).toArray());
+		assertThat(root.executeAndGetInOrderResult().stream().mapToInt(i->i).toArray()).containsExactly(2, 1, 3);
+//		assertArrayEquals(new int[] {2, 1, 3}, root.executeAndGetInOrderResult().stream().mapToInt(i->i).toArray());
 	}
 	
 //	@Test
