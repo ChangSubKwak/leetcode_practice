@@ -1,10 +1,5 @@
 package leetcode;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 public class LC0134_Gas_Station_X {
     public int canCompleteCircuit(int[] gas, int[] cost) {
         int start = 0, total = 0, tank = 0;
