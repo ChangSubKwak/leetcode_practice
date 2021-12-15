@@ -1,22 +1,29 @@
 package leetcode;
 
 public class LC1446_ConsecutiveCharacters {
-    public int minStartValue(int[] nums) {
-        int start = 1;
-        while (true) {
-            int sum = start;
-            for (int i = 0; i < nums.length; i++) {
-                sum += nums[i];
-                if (sum < 1) {
-                    break;
-                }
-            }
-            
-            if (sum >= 1) {
-                break;
-            }
-            start++;
+    public int maxPower(String s) {
+        int len = s.length();
+        
+        if (len == 1) {
+            return 1;
         }
-        return start;
+        
+        int max = 1;
+        int count = 1;
+        for (int i = 1; i < len; i++) {
+            if (s.charAt(i-1)== s.charAt(i)) {
+                count++;
+                
+                if (max < count) {
+                    max = count;
+                }
+                
+                continue;
+            }
+
+            count = 1;
+        }
+        
+        return max;
     }
 }
