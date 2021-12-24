@@ -2,6 +2,8 @@ package leetcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.LinkedList;
 import java.util.List;
 
 public class LC0056_MergeIntervals {
@@ -33,9 +35,46 @@ public class LC0056_MergeIntervals {
     		res[i/2][0] = list.get(i);
     		res[i/2][1] = list.get(i+1);
     	}
-    	//System.out.println(list);
         
     	return res;
+    }
+    
+    public int[][] merge2(int[][] intervals) {
+        int len = intervals.length;
+        Arrays.sort(intervals, new Comparator<int[]>() {
+            public int compare(int[] a, int[] b) {
+                return Integer.compare(a[0], b[0]);
+            }
+        });
+        
+        LinkedList<List<Integer>> list = new LinkedList<>();
+        
+        for (int i = 0; i < len; i++) {
+            list.addLast(Arrays.asList(intervals[i][0], intervals[i][1]));
+        }
+        
+        int i = 1;
+        while(i < len) {
+            int prevFrom = list.get(i-1).get(0);
+            int prevTo = list.get(i-1).get(1);
+            
+            int currFrom = list.get(i).get(0);;
+            int currTo = list.get(i).get(1);;
+
+            if ((prevFrom <= currFrom) && (currFrom <= prevTo)) {
+                list.remove(i-1);
+                list.remove(i-1);
+                list.add(i-1, Arrays.asList(prevFrom, Math.max(prevTo, currTo)));
+                len--;
+                continue;
+            }
+            i++;
+        }
+        
+        return list.stream()
+            .map(l -> l.stream().mapToInt(e -> e).toArray())
+            .toArray(int[][]::new)
+            ;
     }
 	
 	public static void main(String[] args) {
