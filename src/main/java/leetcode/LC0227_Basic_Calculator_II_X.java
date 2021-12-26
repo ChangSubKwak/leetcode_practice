@@ -1,5 +1,7 @@
 package leetcode;
 
+import java.util.Stack;
+
 public class LC0227_Basic_Calculator_II_X {
     public int calculate(String s) {
         if (s == null || s.isEmpty()) return 0;
