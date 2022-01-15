@@ -1,10 +1,45 @@
 package leetcode;
 
+import java.util.ArrayDeque;
 import java.util.Arrays;
-import java.util.LinkedList;
+import java.util.Deque;
 
-public class LC0239_SlidingWindowMaximum {
+public class LC0239_Sliding_Window_Maximum {
+    public int[] maxSlidingWindow(int[] a, int k) {
+		if (a == null || k <= 0) {
+			return new int[0];
+		}
+		int n = a.length;
+		int[] r = new int[n-k+1];
+		int ri = 0;
+		// store index
+		Deque<Integer> q = new ArrayDeque<>();
+		for (int i = 0; i < a.length; i++) {
+			// remove numbers out of range k
+			while (!q.isEmpty() && q.peek() < i - k + 1) {
+				q.poll();
+			}
+            // System.out.println("1 : " + i + " : " + q);
+            
+			// remove smaller numbers in k range as they are useless
+			while (!q.isEmpty() && a[q.peekLast()] < a[i]) {
+				q.pollLast();
+			}
+            // System.out.println("2 : " + i + " : " + q);
+            
+			// q contains index... r contains content
+			q.offer(i);
+            // System.out.println("3 : " + i + " : " + q);
+			if (i >= k - 1) {
+				r[ri++] = a[q.peek()];
+                // System.out.println("Result : " + Arrays.toString(r));
+			}
+		}
+		return r;
+	}
 	
+
+	/*
     LinkedList<Integer> list = new LinkedList<>();
     int[] globalNums;
     
@@ -13,7 +48,7 @@ public class LC0239_SlidingWindowMaximum {
         if (!list.isEmpty() && list.getFirst() == i - k)
             list.removeFirst();
         
-        // 새롭게 추가될 값보다 작읍 모든 것을 제거하기
+        // 새롭게 추가될 값보다 작은 모든 것을 제거하기
         while (!list.isEmpty() && globalNums[i] > globalNums[list.getLast()])
             list.removeLast();
     }
@@ -43,7 +78,7 @@ public class LC0239_SlidingWindowMaximum {
         
         return output;
     }
-	
+	*/
 	
 	
 	/*
@@ -116,7 +151,7 @@ public class LC0239_SlidingWindowMaximum {
 
 	public static void main(String[] args) {
 		//System.arraycopy(src, srcPos, dest, destPos, length);
-		LC0239_SlidingWindowMaximum t = new LC0239_SlidingWindowMaximum();
+		LC0239_Sliding_Window_Maximum t = new LC0239_Sliding_Window_Maximum();
 //		System.out.println(
 //				Arrays.toString(t.maxSlidingWindow(new int[] {9,10,9,-7,-4,-8,2,-6}, 5))
 //				);
