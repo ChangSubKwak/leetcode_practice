@@ -1,37 +1,24 @@
 package leetcode;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class LC0146_LRU_Cache {
-    private Map<Integer, Integer> map;
-    private int capacity;
-    private int recentKey;
-
-    public LC0146_LRU_Cache(int capacity) {
-        this.capacity = capacity;
-        map = new HashMap<>();
+    private LinkedHashMap<Integer, Integer> map;
+    @SuppressWarnings("serial")
+	public LC0146_LRU_Cache(int capacity) {
+        map = new LinkedHashMap<Integer, Integer> (capacity, 0.75f, true){
+            protected boolean removeEldestEntry(Map.Entry eldest) {
+                return size() > capacity;
+            }
+        };        
     }
     
     public int get(int key) {
-        recentKey = key;
-        if (map.containsKey(key)) {
-            return map.get(key);
-        }
-        return -1;
+        return map.getOrDefault(key, -1);
     }
-    
+
     public void put(int key, int value) {
-        if (map.size() >= capacity) {
-            for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-                // System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
-                if (recentKey != entry.getKey()) {
-                    map.remove(entry.getKey());
-                    break;
-                }
-            }
-        }
-        // System.out.println(map);
         map.put(key, value);
     }
 }
