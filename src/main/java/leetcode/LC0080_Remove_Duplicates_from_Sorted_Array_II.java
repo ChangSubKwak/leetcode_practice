@@ -1,7 +1,5 @@
 package leetcode;
 
-import java.util.Arrays;
-
 public class LC0080_Remove_Duplicates_from_Sorted_Array_II {
     public int removeDuplicates(int[] nums) {
         int i = 0;
@@ -23,14 +21,15 @@ public class LC0080_Remove_Duplicates_from_Sorted_Array_II {
     	while(p < len) {
     		
     		c = 1;
-    		while(p < len - 1 &&nums[p] == nums[p+1]) {
+    		while(p < len - 1 && nums[p] == nums[p+1]) {
     			p++;
     			c++;
     		}
     		
     		c = Math.min(c, 2);
-    		for (int i = s ; i < s + c ; i++)
+    		for (int i = s; i < s + c; i++) {
     			nums[i] = nums[p];
+    		}
     		s += c;
     		p++;
     	}
