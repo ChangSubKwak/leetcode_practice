@@ -2,7 +2,18 @@ package leetcode;
 
 import java.util.Arrays;
 
-public class LC0080_RemoveDuplicatesfromSortedArrayII {
+public class LC0080_Remove_Duplicates_from_Sorted_Array_II {
+    public int removeDuplicates(int[] nums) {
+        int i = 0;
+        for (int n : nums) {
+            if (i < 2 || n > nums[i - 2]) {
+                nums[i++] = n;
+            }
+        }
+        return i;
+    }
+	
+	/*
     public int removeDuplicates(int[] nums) {
     	int len = nums.length;
     	int p = 0;
@@ -28,10 +39,5 @@ public class LC0080_RemoveDuplicatesfromSortedArrayII {
     	
     	return s;
     }
-	
-	public static void main(String[] args) {
-		LC0080_RemoveDuplicatesfromSortedArrayII t = new LC0080_RemoveDuplicatesfromSortedArrayII();
-		System.out.println(t.removeDuplicates(new int[]{1,1,1,2,2,3}));
-		System.out.println(t.removeDuplicates(new int[]{0,0,1,1,1,1,2,3,3}));
-	}
+    //*/
 }
