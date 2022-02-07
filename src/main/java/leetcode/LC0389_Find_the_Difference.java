@@ -1,7 +1,6 @@
 package leetcode;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Arrays;
 
 public class LC0389_Find_the_Difference {
     public char findTheDifference(String s, String t) {
