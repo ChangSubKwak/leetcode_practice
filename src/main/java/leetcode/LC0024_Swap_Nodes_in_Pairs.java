@@ -1,6 +1,6 @@
 package leetcode;
 
-public class LC0024_SwapNodesinPairs {
+public class LC0024_Swap_Nodes_in_Pairs {
     public ListNode swapPairs(ListNode head) {
     	ListNode t = head;
     	
@@ -21,7 +21,7 @@ public class LC0024_SwapNodesinPairs {
     }
 	
 	public static void main(String[] args) {
-		LC0024_SwapNodesinPairs t = new LC0024_SwapNodesinPairs();
+		LC0024_Swap_Nodes_in_Pairs t = new LC0024_Swap_Nodes_in_Pairs();
 		
 		ListNode l1 = new ListNode(1);
 		ListNode h1 = l1;
