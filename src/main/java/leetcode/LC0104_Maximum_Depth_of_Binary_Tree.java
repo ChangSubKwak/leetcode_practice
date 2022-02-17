@@ -27,7 +27,6 @@ public class LC0104_Maximum_Depth_of_Binary_Tree {
         
         return max;
     }
-}
 	
 	// #1
 	/*

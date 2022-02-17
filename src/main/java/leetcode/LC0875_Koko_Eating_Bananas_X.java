@@ -1,6 +1,6 @@
 package leetcode;
 
-public class LC0875_KoKo_Eating_Bananas_X {
+public class LC0875_Koko_Eating_Bananas_X {
     public int minEatingSpeed(int[] piles, int h) {
         int left = 1, right = 1;
         for (int pile : piles) {

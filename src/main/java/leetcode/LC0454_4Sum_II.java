@@ -1,5 +1,12 @@
 package leetcode;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 public class LC0454_4Sum_II {
     public int fourSumCount(int[] nums1, int[] nums2, int[] nums3, int[] nums4) {
         Set<Integer> set = IntStream.of(nums4).boxed().collect(Collectors.toCollection(HashSet::new));
