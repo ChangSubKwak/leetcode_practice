@@ -27,7 +27,6 @@ public class LC0392_Is_Subsequence {
         int ti = 0;
         
         while(si < s.length() && ti < t.length()) {
-            //char sch = s.charAt(si);
             while(ti < t.length() && s.charAt(si) != t.charAt(ti)) {
                 ti++;
             }
