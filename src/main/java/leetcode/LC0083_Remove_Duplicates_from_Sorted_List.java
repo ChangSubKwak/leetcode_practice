@@ -1,6 +1,6 @@
 package leetcode;
 
-public class LC0083_RemoveDuplicatesfromSortedListII {
+public class LC0083_Remove_Duplicates_from_Sorted_List {
 	public ListNode deleteDuplicates(ListNode head) {
 		if (head == null) return null;
 		
@@ -25,7 +25,7 @@ public class LC0083_RemoveDuplicatesfromSortedListII {
 	}
 	
 	public static void main(String[] args) {
-		LC0083_RemoveDuplicatesfromSortedListII t = new LC0083_RemoveDuplicatesfromSortedListII();
+		LC0083_Remove_Duplicates_from_Sorted_List t = new LC0083_Remove_Duplicates_from_Sorted_List();
 		//int[] arr = new int[] {1,1,2,3,3};
 		int[] arr = new int[] {1,1,2};
 		ListNode l = ListNode.setArray(arr);
