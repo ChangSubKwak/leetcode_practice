@@ -10,9 +10,17 @@ public class LC0082_Remove_Duplicates_from_Sorted_List_II {
 		ListNode p = dummy;
 		ListNode c = head;
 		while(c != null) {
-			while(c.next != null && c.val == c.next.val) c = c.next;
-			if (p.next == c) p = c;
-			else             p.next = c.next;
+			while(c.next != null && c.val == c.next.val) {
+				c = c.next;
+			}
+			
+			if (p.next == c) {
+				p = c;
+				c = c.next;
+				continue;
+			}
+			
+			p.next = c.next;
 			c = c.next;
 		}
 		return dummy.next;
@@ -35,7 +43,6 @@ public class LC0082_Remove_Duplicates_from_Sorted_List_II {
         prev2.next = head;
         start.next = head;
         while(curr != null) {
-            // work
             boolean isEqual = false;
             while(curr != null && prev.val == curr.val) {
                 isEqual = true;
