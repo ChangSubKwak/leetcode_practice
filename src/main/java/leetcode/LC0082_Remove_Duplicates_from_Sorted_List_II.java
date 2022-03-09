@@ -1,64 +1,6 @@
 package leetcode;
 
-public class LC0082_RemoveDuplicatesfromSortedList {
-	/*
-	ListNode head;
-	ListNode p;
-	ListNode c;
-	ListNode n;
-	
-	public void deleteHead() {
-		ListNode t = c;
-		c = c.next;
-		if (n != null) n = n.next;
-		head = c;
-		t = null;
-	}
-	
-	public void deleteMiddle() {
-		p.next = n;
-		ListNode t = c;
-		c = c.next;
-		if (n != null) n = n.next;
-		t = null;
-	}
-	
-    public ListNode deleteDuplicates(ListNode head) {
-    	if (head == null) return null;
-    	
-    	this.head = head;
-    	p = null;
-    	c = head;
-    	n = head.next;
-    	
-    	boolean onDel = false;
-    	while(n != null) {
-    		if (c.val == n.val) {
-    			onDel = true;
-    		} else if (onDel) {
-    			if (c == this.head) deleteHead(); 
-    			else           deleteMiddle();
-    			onDel = false;
-    			continue;
-    		}
-    		
-    		if (onDel) {
-    			if (c == this.head) deleteHead();
-    			else           deleteMiddle();
-    		} else {
-    			p = c; c = c.next; n = n.next;
-    		}
-    	}
-    	
-    	if (onDel) {
-			if (c == this.head) deleteHead();
-			else                deleteMiddle();
-    	}
-    	
-        return this.head;
-    }
-    */
-	
+public class LC0082_Remove_Duplicates_from_Sorted_List_II {
 	public ListNode deleteDuplicates(ListNode head) {
 		if (head == null) return null;
 		
@@ -76,16 +18,49 @@ public class LC0082_RemoveDuplicatesfromSortedList {
 		return dummy.next;
 	}
 	
-	public static void main(String[] args) {
-		LC0082_RemoveDuplicatesfromSortedList t = new LC0082_RemoveDuplicatesfromSortedList();
-//		int[] arr = new int[] {1, 2, 2};
-//		int[] arr = new int[] {1, 1};
-//		int[] arr = new int[] {};
-//		int[] arr = new int[] {1,2,3,3,4,4,5};
-		int[] arr = new int[] {1,1,1,2,3};
-		ListNode l = ListNode.setArray(arr);
-		ListNode.print(l);
-		l = t.deleteDuplicates(l);
-		ListNode.print(l);
-	}
+    public ListNode deleteDuplicates_20220309(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        
+        ListNode start = new ListNode();
+        ListNode prev  = new ListNode();
+        ListNode prev2 = new ListNode();
+        ListNode curr  = new ListNode();
+        
+        prev2 = new ListNode();
+        prev  = head;
+        curr  = head.next;
+        
+        prev2.next = head;
+        start.next = head;
+        while(curr != null) {
+            // work
+            boolean isEqual = false;
+            while(curr != null && prev.val == curr.val) {
+                isEqual = true;
+                prev = curr;
+                curr = curr.next;
+            }
+            
+            if (isEqual) {
+                if (prev2.next == head) {
+                    head = curr;
+                    start.next = curr;
+                }
+                prev2.next = curr;
+                prev = curr;
+                
+                if (curr != null) {
+                    curr = curr.next;
+                }
+                continue;
+            }
+            
+            prev2 = prev;
+            prev = curr;
+            curr = curr.next;
+        }
+        return start.next;
+    }
 }
