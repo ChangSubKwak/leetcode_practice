@@ -1,6 +1,6 @@
 package leetcode;
 
-public class LC0061_RotateList {
+public class LC0061_Rotate_List {
     public ListNode rotateRight(ListNode head, int k) {
     	if (head == null || head.next == null) return head;
         
@@ -26,7 +26,7 @@ public class LC0061_RotateList {
     }
 	
 	public static void main(String[] args) {
-		LC0061_RotateList t = new LC0061_RotateList();
+		LC0061_Rotate_List t = new LC0061_Rotate_List();
 		ListNode head = new ListNode(1);
 //		ListNode head = new ListNode(0);
 		ListNode l = head;
