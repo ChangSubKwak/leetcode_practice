@@ -17,6 +17,7 @@ public class LC0138_Copy_List_with_Random_Pointer_X {
 	}
 	
     Map<Node,Node> visited = new HashMap<>();
+    
     private Node getClonedNode(Node n) {
         if(n==null)
             return null;
@@ -27,7 +28,46 @@ public class LC0138_Copy_List_with_Random_Pointer_X {
             return visited.get(n);
         }
     }
+    
     public Node copyRandomList(Node head) {
+        Node iter = head, next;
+
+        while (iter != null) {
+            next = iter.next;
+            
+            Node copy = new Node(iter.val);
+            iter.next = copy;
+            copy.next = next;
+            iter = next;
+        }
+
+        iter = head;
+        while (iter != null) {
+            if (iter.random != null) {
+                iter.next.random = iter.random.next;
+            }
+            iter = iter.next.next;
+        }
+
+        iter = head;
+        Node pseudoHead = new Node(0);
+        Node copy, copyIter = pseudoHead;
+
+        while (iter != null) {
+            next = iter.next.next;
+            
+            copy = iter.next;
+            copyIter.next = copy;
+            copyIter = copy;
+            
+            iter.next = next;
+            iter = next;
+        }
+        
+        return pseudoHead.next;
+    }
+    
+    public Node copyRandomList1(Node head) {
         if(head==null)
             return null;
         Node oldNode = head;
