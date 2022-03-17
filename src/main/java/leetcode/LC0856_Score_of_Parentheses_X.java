@@ -1,6 +1,6 @@
 package leetcode;
 
-public class LC0856_Score_of_Parentheses_R {
+public class LC0856_Score_of_Parentheses_X {
     public int scoreOfParentheses(String s) {
         int result = 0;
         int c = 1;
