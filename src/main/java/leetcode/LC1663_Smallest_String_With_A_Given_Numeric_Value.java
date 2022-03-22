@@ -1,8 +1,7 @@
 package leetcode;
 
-public class LC1663_SmallestStringWithAGivenNumericValue {
+public class LC1663_Smallest_String_With_A_Given_Numeric_Value {
     public String getSmallestString(int n, int k) {
-    	//int remain = k;
     	StringBuilder sb = new StringBuilder();
     	while(k != 0) {
     		for (int i = 26; i>=1 ;i--) {
@@ -16,12 +15,4 @@ public class LC1663_SmallestStringWithAGivenNumericValue {
     	}
         return sb.reverse().toString();
     } 
-	
-
-	public static void main(String[] args) {
-		LC1663_SmallestStringWithAGivenNumericValue t = new LC1663_SmallestStringWithAGivenNumericValue();
-		System.out.println(t.getSmallestString(3, 27));
-		System.out.println(t.getSmallestString(5, 73));
-	}
-
 }
