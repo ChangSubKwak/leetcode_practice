@@ -1,6 +1,18 @@
 package leetcode;
 
-public class LC0081_SearchinRotatedSortedArrayII {
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class LC0081_Search_in_Rotated_Sorted_Array_II {
+    public boolean search2(int[] nums, int target) {
+        List<Integer> list = Arrays.stream(nums)
+            .boxed()
+            .collect(Collectors.toList());
+        
+        return list.contains(target);
+    }
+	
 	public boolean myBS(int[] array, int target, int left, int right) {
 		if (left > right) return false;
 		
@@ -12,7 +24,7 @@ public class LC0081_SearchinRotatedSortedArrayII {
 		else                          return myBS(array, target, left, mid-1);
 	}
 	
-    public boolean search(int[] nums, int target) {
+    public boolean search1(int[] nums, int target) {
     	int len = nums.length;
     	if (len == 0) return false;
     	
@@ -36,18 +48,4 @@ public class LC0081_SearchinRotatedSortedArrayII {
 //    	return Arrays.binarySearch(t, target) >= 0;
     	return myBS(t, target, 0, len);
     }
-	
-	public static void main(String[] args) {
-		LC0081_SearchinRotatedSortedArrayII t = new LC0081_SearchinRotatedSortedArrayII();
-		System.out.println(t.search(new int[]{1}, 2));
-		System.out.println(t.search(new int[]{3, 1}, 1));
-		System.out.println(t.search(new int[]{1}, 1));
-		System.out.println(t.search(new int[]{2,5,6,0,0,1,2}, 0));
-		System.out.println(t.search(new int[]{2,5,6,0,0,1,2}, 3));
-//		t.search(new int[]{2,5,6,0,0,1,2}, -1);
-//		t.search(new int[]{2,5,6,0,0,1,2}, 0);
-//		t.search(new int[]{2,5,6,0,0,1,2}, 3);
-//		t.search(new int[]{2,5,6,0,0,1,2}, 4);
-//		t.search(new int[]{2,5,6,0,0,1,2}, 5);
-	}
 }
