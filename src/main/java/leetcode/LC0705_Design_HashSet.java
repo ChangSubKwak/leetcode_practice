@@ -8,7 +8,7 @@ public class LC0705_Design_HashSet {
 	    Set<Integer> set;
 
 	    public MyHashSet() {
-	        set = new HashSet();
+	        set = new HashSet<>();
 	    }
 	    
 	    public void add(int key) {
