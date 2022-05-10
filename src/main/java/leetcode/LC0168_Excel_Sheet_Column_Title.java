@@ -1,24 +1,21 @@
 package leetcode;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class LC0168_Excel_Sheet_Column_Title {
     public String convertToTitle(int columnNumber) {
-        List<String> list = new ArrayList<>();
+        StringBuilder sb = new StringBuilder();
         
-        while(columnNumber != 0) {
-            int num1 = columnNumber / 26;
-            int num2 = columnNumber % 26;
-            columnNumber = num1;
+        while(columnNumber > 26) {
+            columnNumber--;
+            int remain = (columnNumber % 26);
+            columnNumber /= 26;
             
-            char c = (char)('A' + num2 - 1);
-            
-            list.add(String.valueOf(c));
+            char c = (char)('A' + remain);
+            sb.append(c);
         }
         
-        System.out.println(list);
+        sb.append((char)('A' + columnNumber - 1));
+        sb.reverse();
         
-        return String.join("", list);
+        return sb.toString();
     }
 }
