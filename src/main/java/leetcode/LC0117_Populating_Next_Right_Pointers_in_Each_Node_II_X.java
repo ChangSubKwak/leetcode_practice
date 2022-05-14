@@ -1,22 +1,6 @@
 package leetcode;
 
 public class LC0117_Populating_Next_Right_Pointers_in_Each_Node_II_X {
-    private void recursive(Node root) {
-        if (root == null) {
-            return;
-        }
-        System.out.println(root.val);
-        recursive(root.left);
-        recursive(root.right);
-    }
-    
-    public Node connect(Node root) {
-        recursive(root);
-        return root;
-    }
-	
-	// #1
-	/*
     public Node connect(Node root) {
     	Node node  = root;
     	Node levelHead  = new Node(0);
@@ -44,5 +28,4 @@ public class LC0117_Populating_Next_Right_Pointers_in_Each_Node_II_X {
 
     	return root;
     }
-    */
 }
