@@ -1,5 +1,8 @@
 package leetcode;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class LC0202_Happy_Number {
     public boolean isHappy(int n) {
         Set<Integer> set = new HashSet<>();
