@@ -1,31 +1,49 @@
 package leetcode;
 
 public class LC0063_Unique_Paths_II {
-    private int total;
     private int row;
     private int col;
-    
-    private void recursive(int[][] obstacleGrid, int y, int x) {
-        if (y < 0 || x < 0 || y >= row || x >= col || obstacleGrid[y][x] == 1) {
-            return;
-        }
-        
-        if (y == row - 1 && x == col - 1) {
-            total++;
-            return;
-        }
-        
-        recursive(obstacleGrid, y + 1, x);
-        recursive(obstacleGrid, y, x + 1);
-    }
+    private int[][] dp;
     
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
-        total = 0;
         row = obstacleGrid.length;
         col = obstacleGrid[0].length;
-        recursive(obstacleGrid, 0, 0);
+        dp = new int[row][col];
         
-        return total;
+        if (obstacleGrid[row-1][col-1] == 1) {
+            return 0;
+        }
+        
+        for (int y = 0; y < row; y++) {
+            if (obstacleGrid[y][0] == 1) {
+                break;
+            }
+            dp[y][0] = 1;
+        }
+        
+        for (int x = 0; x < col; x++) {
+            if (obstacleGrid[0][x] == 1) {
+                break;
+            }
+            dp[0][x] = 1;
+        }
+        
+        for (int y = 1; y < row; y++) {
+            for (int x = 1; x < col; x++) {
+                int sum = 0;
+                if (obstacleGrid[y-1][x] != 1) {
+                    sum += dp[y-1][x];
+                }
+                
+                if (obstacleGrid[y][x-1] != 1) {
+                    sum += dp[y][x-1];
+                }
+                
+                dp[y][x] =  sum;
+            }
+        }
+        
+        return dp[row - 1][col - 1];
     }
 	
 	// #1
@@ -62,14 +80,4 @@ public class LC0063_Unique_Paths_II {
 		return dp[m][n];
 	}
 	//*/
-	
-	public static void main(String[] args) {
-		LC0063_Unique_Paths_II t = new LC0063_Unique_Paths_II();
-		System.out.println(t.uniquePathsWithObstacles(new int[][] {{0,0,0},{0,1,0},{0,0,0}}));
-		System.out.println(t.uniquePathsWithObstacles(new int[][] {{0,1},{0,0}}));
-		System.out.println(t.uniquePathsWithObstacles(new int[][] {{0,0},{0,1}}));
-		System.out.println(t.uniquePathsWithObstacles(new int[][] {{0,0},{1,1},{0,0}}));
-		System.out.println(t.uniquePathsWithObstacles(new int[][] {{0,1,0,0,0},{1,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0}}));
-		
-	}
 }
