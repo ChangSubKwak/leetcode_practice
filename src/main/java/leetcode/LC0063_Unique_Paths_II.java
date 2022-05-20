@@ -1,8 +1,36 @@
 package leetcode;
 
-public class LC0063_UniquePaths2 {
+public class LC0063_Unique_Paths_II {
+    private int total;
+    private int row;
+    private int col;
+    
+    private void recursive(int[][] obstacleGrid, int y, int x) {
+        if (y < 0 || x < 0 || y >= row || x >= col || obstacleGrid[y][x] == 1) {
+            return;
+        }
+        
+        if (y == row - 1 && x == col - 1) {
+            total++;
+            return;
+        }
+        
+        recursive(obstacleGrid, y + 1, x);
+        recursive(obstacleGrid, y, x + 1);
+    }
+    
+    public int uniquePathsWithObstacles(int[][] obstacleGrid) {
+        total = 0;
+        row = obstacleGrid.length;
+        col = obstacleGrid[0].length;
+        recursive(obstacleGrid, 0, 0);
+        
+        return total;
+    }
 	
-	public int uniquePathsWithObstacles(int[][] obstacleGrid) {
+	// #1
+    /*
+	public int uniquePathsWithObstacles1(int[][] obstacleGrid) {
 		int m = obstacleGrid.length;
 		int n = obstacleGrid[0].length;
 		if (obstacleGrid[m-1][n-1] == 1 || obstacleGrid[0][0] == 1) return 0;
@@ -33,9 +61,10 @@ public class LC0063_UniquePaths2 {
 
 		return dp[m][n];
 	}
+	//*/
 	
 	public static void main(String[] args) {
-		LC0063_UniquePaths2 t = new LC0063_UniquePaths2();
+		LC0063_Unique_Paths_II t = new LC0063_Unique_Paths_II();
 		System.out.println(t.uniquePathsWithObstacles(new int[][] {{0,0,0},{0,1,0},{0,0,0}}));
 		System.out.println(t.uniquePathsWithObstacles(new int[][] {{0,1},{0,0}}));
 		System.out.println(t.uniquePathsWithObstacles(new int[][] {{0,0},{0,1}}));
