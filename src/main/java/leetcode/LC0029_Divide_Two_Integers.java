@@ -14,7 +14,7 @@ public class LC0029_Divide_Two_Integers {
 			return 0;
 		}
 
-		long longAnswer = ldivide(longDividend, longDivisor);
+		long longAnswer = longDivide(longDividend, longDivisor);
 
 		int ans;
 		if (longAnswer > Integer.MAX_VALUE) {
@@ -26,7 +26,7 @@ public class LC0029_Divide_Two_Integers {
 		return ans;
 	}
 
-	private long ldivide(long longDividend, long longDivisor) {
+	private long longDivide(long longDividend, long longDivisor) {
 		if (longDividend < longDivisor) {
 			return 0;
 		}
@@ -39,6 +39,6 @@ public class LC0029_Divide_Two_Integers {
 			multiple += multiple;
 		}
 
-		return multiple + ldivide(longDividend - sum, longDivisor);
+		return multiple + longDivide(longDividend - sum, longDivisor);
 	}
 }
