@@ -5,7 +5,38 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class LC0167_TwoSumII_InputArrayIsSorted {
+public class LC0167_Two_Sum_II_Input_Array_Is_Sorted {
+	public int[] twoSum2(int[] numbers, int target) {
+		int[] result = new int[2];
+		
+		outloop:
+		for (int i = 0; i < numbers.length; i++) {
+			int remainTarget = target - numbers[i];
+			int s = i + 1;
+			int e = numbers.length - 1;
+			int m = 0;
+			result[0] = i + 1;
+			
+			while (s <= e) {
+				m = (s + e) / 2;
+				if (remainTarget == numbers[m]) {
+					result[1] = m + 1;
+					break outloop;
+				}
+				
+				if (remainTarget > numbers[m]) {
+					s = m + 1;
+				}
+				
+				if (remainTarget < numbers[m]) {
+					e = m - 1;
+				}
+			}
+		}
+		
+		return result;
+	}
+	
 	public int binarySearch(int[] numbers, int target) {
 	    int start = 0;
 	    int end = numbers.length - 1;
@@ -27,7 +58,7 @@ public class LC0167_TwoSumII_InputArrayIsSorted {
 	    return start;
 	}
 	
-    public int[] twoSum(int[] numbers, int target) {
+    public int[] twoSum1(int[] numbers, int target) {
     	List<Integer> list = new ArrayList<>();
     	for (int i = 0; i < numbers.length; i++) {
     		int index1 = binarySearch(numbers, numbers[i]);
@@ -45,13 +76,5 @@ public class LC0167_TwoSumII_InputArrayIsSorted {
     	
     	return list.stream().mapToInt(Integer::new).toArray();
     }
-    
-	public static void main(String[] args) {
-		LC0167_TwoSumII_InputArrayIsSorted t = new LC0167_TwoSumII_InputArrayIsSorted();
-//		System.out.println(Arrays.toString(t.twoSum(new int[] {2, 7, 11, 15}, 9)));
-//		System.out.println(Arrays.toString(t.twoSum(new int[] {2, 3, 4}, 6)));
-//		System.out.println(Arrays.toString(t.twoSum(new int[] {-1, 0}, -1)));
-//		System.out.println(Arrays.toString(t.twoSum(new int[] {0, 0, 3, 4}, 0)));
-		System.out.println(Arrays.toString(t.twoSum(new int[] {5, 25, 75}, 100)));
-	}
+
 }
