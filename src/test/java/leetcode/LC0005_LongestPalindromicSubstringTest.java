@@ -8,7 +8,7 @@ public class LC0005_LongestPalindromicSubstringTest {
 	LC0005_LongestPalindromicSubstring test;
 	
 	@Test
-	void ¹®Á¦°¡_ÁÖ¾îÁö¸é_ÄÉÀÌ½º¸¦_Åë°úÇÑ´Ù() {
+	void ë¬¸ì œê°€_ì£¼ì–´ì§€ë©´_ì¼€ì´ìŠ¤ë¥¼_í†µê³¼í•œë‹¤() {
 		test = new LC0005_LongestPalindromicSubstring();
 		assertThat(test.longestPalindrome("babad")).isEqualTo("bab");
 		assertThat(test.longestPalindrome("cbbd")).isEqualTo("bb");
