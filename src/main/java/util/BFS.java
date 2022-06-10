@@ -1,21 +1,28 @@
 package util;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class BFS {
-    // 1 ____ 2 ____ 6
-    //   |___ 3 ____ 7
-    //   |      |___ 8
-    //   |___ 4
-    //   |___ 5 ____ 9
-    //          |___ 10
-    //
-    // RESULT : 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+    private static final int ROOT_NODE_NUMBER = 0;
+
+    private void recursive(Map<Integer, List<Integer>> nodes, List<Integer> result) {
+        Queue<Integer> queue = new LinkedList<>();
+        
+        result.add(ROOT_NODE_NUMBER);
+        queue.addAll(nodes.get(ROOT_NODE_NUMBER));
+        
+        while(queue.size() > 0) {
+            int nodeNum = queue.poll();
+            result.add(nodeNum);
+            if (nodes.containsKey(nodeNum)) {
+                queue.addAll(nodes.get(nodeNum));
+            }
+        }
+    }
     
-    public List<Integer> execute(Map<Integer, List<Integer>> nodeMap, HashSet<Integer> visited) {
-        return null;
+    public List<Integer> execute(Map<Integer, List<Integer>> nodes) {
+        List<Integer> result = new ArrayList<>();
+        recursive(nodes, result);
+        return result;
     }
 }
