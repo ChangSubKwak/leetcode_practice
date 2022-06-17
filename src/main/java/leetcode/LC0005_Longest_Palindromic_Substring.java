@@ -1,7 +1,7 @@
 package leetcode;
 
 // O(n^2)
-public class LC0005_Longest_PalindromicSubstring {
+public class LC0005_Longest_Palindromic_Substring {
 	public String longestPalindrome(String s) {
         int length = s.length();
         boolean[][] dp = new boolean[length][length];
