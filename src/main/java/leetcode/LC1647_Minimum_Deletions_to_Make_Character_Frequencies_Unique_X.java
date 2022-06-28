@@ -2,7 +2,7 @@ package leetcode;
 
 import java.util.Arrays;
 
-public class LC1647_Minimum_Deletions_to_Make_Character_Frequencies_Unique {
+public class LC1647_Minimum_Deletions_to_Make_Character_Frequencies_Unique_X {
     
     public int minDeletions(String s) {
         int[] freq = new int[26];

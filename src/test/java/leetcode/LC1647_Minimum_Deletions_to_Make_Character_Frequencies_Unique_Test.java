@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class LC1647_Minimum_Deletions_to_Make_Character_Frequencies_Unique_Test {
-    LC1647_Minimum_Deletions_to_Make_Character_Frequencies_Unique test = new LC1647_Minimum_Deletions_to_Make_Character_Frequencies_Unique();
+    LC1647_Minimum_Deletions_to_Make_Character_Frequencies_Unique_X test = new LC1647_Minimum_Deletions_to_Make_Character_Frequencies_Unique_X();
 
     @Test
     void exampleTest() {
