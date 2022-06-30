@@ -1,10 +1,35 @@
 package leetcode;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 public class LC0001_Two_Sum {
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        int[] remain = new int[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            map.put(nums[i], i);
+            remain[i] = target - nums[i];
+        }
+
+        int first = -1;
+        int second = -1;
+        for (int i = 0; i < remain.length; i++) {
+            if (map.containsKey(remain[i])) {
+                first = i;
+                second = map.get(remain[i]);
+
+                if (first == second) {
+                    continue;
+                }
+                break;
+            }
+        }
+        int[] result = new int[] {first, second};
+        Arrays.sort(result);
+
+        return result;
+    }
+
     public int[] twoSum2(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
