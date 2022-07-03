@@ -1,12 +1,11 @@
 package leetcode;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class LC820_Short_Encoding_of_Words_Test {
+public class LC0820_Short_Encoding_of_Words_Test {
     
     LC820_Short_Encoding_of_Words test;
     
