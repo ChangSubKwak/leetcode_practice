@@ -1,10 +1,45 @@
 package leetcode;
 
+import java.util.Arrays;
+import java.util.PriorityQueue;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.stream.Collectors;
 
-public class LC0128_LongestConsecutiveSequence {
-    public int longestConsecutive(int[] nums) {
+public class LC0128_Longest_Consecutive_Sequence {
+	public int longestConsecutive(int[] nums) {
+		Set<Integer> set = Arrays.stream(nums).boxed().collect(Collectors.toSet());
+		PriorityQueue<Integer> pq = new PriorityQueue<>();
+		
+		for (int i: set) {
+			pq.add(i);
+		}
+		
+		if (pq.size() <= 1) {
+			return pq.size();
+		}
+		
+		int max = 0;
+		int count = 1;
+		int prevNum = pq.poll();
+		while(pq.size() > 0) {
+			int currNum = pq.poll();
+			if ((prevNum + 1) == currNum) {
+				count++;
+			} else {
+				count = 1;
+			}
+			
+			if (max < count) {
+				max = count;
+			}
+			
+			prevNum = currNum;
+		}
+		return max;
+	}
+	
+    public int longestConsecutive1(int[] nums) {
     	Set<Integer> set = new TreeSet<>();
     	for (int i = 0; i < nums.length; i++) {
     		set.add(nums[i]);
@@ -41,10 +76,4 @@ public class LC0128_LongestConsecutiveSequence {
     	
         return maxCount;
     }
-	
-	public static void main(String[] args) {
-		LC0128_LongestConsecutiveSequence t = new LC0128_LongestConsecutiveSequence();
-		System.out.println(t.longestConsecutive(new int[] {100, 4, 200, 1, 3, 2}));
-		System.out.println(t.longestConsecutive(new int[] {0,3,7,2,5,8,4,6,0,1}));
-	}
 }
