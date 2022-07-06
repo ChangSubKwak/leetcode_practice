@@ -1,7 +1,22 @@
 package leetcode;
 
-public class LC0070_ClimbingStairs {
+public class LC0070_Climbing_Stairs {
+    private int[] dp = new int[46];
+
     public int climbStairs(int n) {
+        if (n <= 3) {
+            return n;
+        }
+
+        if (dp[n] != 0) {
+            return dp[n];
+        }
+
+        dp[n] = climbStairs(n - 1) + climbStairs(n - 2);
+        return dp[n];
+    }
+
+    public int climbStairs1(int n) {
         int[] dp = new int[n + 1];
         
         dp[0] = 1;
@@ -13,10 +28,4 @@ public class LC0070_ClimbingStairs {
         
         return dp[n];
     }
-    
-	public static void main(String[] args) {
-		LC0070_ClimbingStairs t = new LC0070_ClimbingStairs();
-		System.out.println(t.climbStairs(2));
-		System.out.println(t.climbStairs(3));
-	}
 }
