@@ -1,6 +1,6 @@
 package leetcode;
 
-public class LC0097_InterleavingString_X {
+public class LC0097_Interleaving_String {
     public boolean isInterleave(String s1, String s2, String s3) {
         if (s3.length() != s1.length() + s2.length()) return false;
         boolean[][] dp = new boolean[s1.length() + 1][s2.length()+1];
@@ -21,7 +21,7 @@ public class LC0097_InterleavingString_X {
     }
 	
 	public static void main(String[] args) {
-		LC0097_InterleavingString_X t = new LC0097_InterleavingString_X();
+		LC0097_Interleaving_String t = new LC0097_Interleaving_String();
 		System.out.println(t.isInterleave("aabcc", "dbbca", "aadbbcbcac"));
 		System.out.println(t.isInterleave("aabcc", "dbbca", "aadbbbaccc"));
 		System.out.println(t.isInterleave("", "", ""));
