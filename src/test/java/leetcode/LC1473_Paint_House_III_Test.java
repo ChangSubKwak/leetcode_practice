@@ -6,11 +6,11 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class LC1473_Paint_House_III_Test {
-	LC1473_Paint_House_III test;
+	LC1473_Paint_House_III_X test;
 	
 	@BeforeEach
 	void setUp() {
-		test = new LC1473_Paint_House_III();
+		test = new LC1473_Paint_House_III_X();
 	}
 	
 	@Test
