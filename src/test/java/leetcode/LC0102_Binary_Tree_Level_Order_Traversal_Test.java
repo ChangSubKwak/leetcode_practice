@@ -10,7 +10,7 @@ import org.junit.jupiter.api.*;
 import sun.reflect.generics.tree.*;
 
 class LC0102_Binary_Tree_Level_Order_Traversal_Test {
-    LC0102_Binary_Tree_Level_Order_Traversal test;
+    LC0102_Binary_Tree_Level_Order_Traversal test = new LC0102_Binary_Tree_Level_Order_Traversal();
     TreeNode one;
     
     @BeforeEach
