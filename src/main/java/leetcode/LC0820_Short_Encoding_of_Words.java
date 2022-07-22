@@ -3,7 +3,7 @@ package leetcode;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LC820_Short_Encoding_of_Words {
+public class LC0820_Short_Encoding_of_Words {
     public int minimumLengthEncoding(String[] words) {
         int length = words.length;
         if (length == 1) {
