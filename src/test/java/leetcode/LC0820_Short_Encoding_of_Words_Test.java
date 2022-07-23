@@ -7,11 +7,11 @@ import static org.assertj.core.api.Assertions.*;
 
 public class LC0820_Short_Encoding_of_Words_Test {
     
-    LC820_Short_Encoding_of_Words test;
+    LC0820_Short_Encoding_of_Words test;
     
     @BeforeEach
     void setUp() {
-        test = new LC820_Short_Encoding_of_Words();
+        test = new LC0820_Short_Encoding_of_Words();
     }
     
     @Test
