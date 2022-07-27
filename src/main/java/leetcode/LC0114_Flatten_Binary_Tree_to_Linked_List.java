@@ -3,7 +3,46 @@ package leetcode;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LC0114_FlattenBinaryTreetoLinkedList {
+public class LC0114_Flatten_Binary_Tree_to_Linked_List {
+	private List<TreeNode> list;
+	
+	private void inorder(TreeNode root) {
+		if (root == null) {
+			return;
+		}
+		
+		list.add(root);
+		inorder(root.left);
+		inorder(root.right);
+		
+	}
+	
+	public void flatten(TreeNode root) {
+		list = new ArrayList<>();
+		inorder(root);
+		
+		if (list.size() == 0) {
+			return;
+		}
+		
+		if (list.size() == 1) {
+			list.get(0).left = null;
+			list.get(0).right = null;
+			root = list.get(0);
+		}
+		
+		for (int i = 0; i < list.size() - 1; i++) {
+			list.get(i).left = null;
+			list.get(i).right = list.get(i + 1);
+		}
+		
+		list.get(list.size() - 1).left = null;
+		list.get(list.size() - 1).right = null;
+		
+		root = list.get(0);
+	}
+	
+	/*
 	public static List<Integer> list;
 	
 	public void traverse(TreeNode root) {
@@ -20,7 +59,6 @@ public class LC0114_FlattenBinaryTreetoLinkedList {
     	
     	list = new ArrayList<>();
         traverse(root);
-        //System.out.println(list);
         TreeNode temp = root;
         temp.val = list.get(0);
     	
@@ -30,9 +68,10 @@ public class LC0114_FlattenBinaryTreetoLinkedList {
         	temp = temp.right;
         }
     }
+    */
 	
 	public static void main(String[] args) {
-		LC0114_FlattenBinaryTreetoLinkedList t = new LC0114_FlattenBinaryTreetoLinkedList();
+		LC0114_Flatten_Binary_Tree_to_Linked_List t = new LC0114_Flatten_Binary_Tree_to_Linked_List();
 		
 		TreeNode root = new TreeNode(1);
 		TreeNode t2 = new TreeNode(2);
