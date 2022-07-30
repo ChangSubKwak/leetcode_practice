@@ -6,11 +6,11 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class LC0860_Lemonade_Change_Test {
-    C0860_Lemonade_Change test;
+    LC0860_Lemonade_Change test;
     
     @BeforeEach
     void setUp() {
-        test = new C0860_Lemonade_Change();
+        test = new LC0860_Lemonade_Change();
     }
     
     @Test
