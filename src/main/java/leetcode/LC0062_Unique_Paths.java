@@ -1,26 +1,6 @@
 package leetcode;
 
-public class LC0062_UniquePaths {
-	
-//	public int move(int y, int x, int m, int n) {
-//		if (y > m || x > n) return 0;
-//		
-//		if (y == m && x == n) {
-//			return 1;
-//		}
-//		
-//		int down  = move(y + 1, x, m, n);
-//		int right = move(y, x + 1, m, n);
-//		
-//		return down + right;
-//	}
-//	
-//    public int uniquePaths(int m, int n) {
-//    	boolean[][] dp = new boolean[m+1][n+1];
-//    	int sum = move(1, 1, m, n);
-//    	
-//        return sum;
-//    }
+public class LC0062_Unique_Paths {
 	
 	public int uniquePaths(int m, int n) {
 		int[][] dp = new int[m+1][n+1];
@@ -37,7 +17,7 @@ public class LC0062_UniquePaths {
 	}
 	
 	public static void main(String[] args) {
-		LC0062_UniquePaths t = new LC0062_UniquePaths();
+		LC0062_Unique_Paths t = new LC0062_Unique_Paths();
 		System.out.println(t.uniquePaths(3, 7));
 		System.out.println(t.uniquePaths(3, 2));
 		System.out.println(t.uniquePaths(51, 9));
