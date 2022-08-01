@@ -3,7 +3,7 @@ package leetcode;
 import java.util.HashMap;
 import java.util.Map;
 
-public class C0860_Lemonade_Change {
+public class LC0860_Lemonade_Change {
     public boolean lemonadeChange(int[] bills) {
         Map<Integer, Integer> billMap = new HashMap<>();
         billMap.put(5, 0);
