@@ -11,7 +11,7 @@ public class LC0823_Binary_Trees_With_Factors_Test {
     
     @BeforeEach
     void setUp() {
-        test = new LC0823_Binary_Trees_With_Factorsc();
+        test = new LC0823_Binary_Trees_With_Factors_X();
     }
     
     @Test
