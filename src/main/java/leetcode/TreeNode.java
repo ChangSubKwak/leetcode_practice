@@ -1,5 +1,7 @@
 package leetcode;
 
+import sun.reflect.generics.tree.Tree;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -93,7 +95,32 @@ public class TreeNode {
 		
 		return res.toString();
 	}
-
+	
+	private boolean traverseForEquality(TreeNode source, TreeNode target) {
+		if (source == null && target == null) {
+			return true;
+		}
+		
+		if (source != null && target == null) {
+			return false;
+		}
+		
+		if (source == null && target != null) {
+			return false;
+		}
+		
+		if (source.val != target.val) {
+			return false;
+		}
+		
+		return traverseForEquality(source.left, target.left) && traverseForEquality(source.right, target.right);
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		return traverseForEquality(this, (TreeNode)obj);
+	}
+	
 	@Override
 	public String toString() {
 		//return "TreeNode [val=" + val + ", left=" + left + ", right=" + right + "]\n";
