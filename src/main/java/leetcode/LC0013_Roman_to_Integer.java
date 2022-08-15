@@ -1,7 +1,213 @@
 package leetcode;
 
-public class LC0013_RomantoInteger {
-	
+public class LC0013_Roman_to_Integer {
+	public int romanToInt(String s) {
+		int i = 0;
+		int sum = 0;
+		while (i < s.length()) {
+			if (0 < s.length() - i && s.charAt(i) == 'V') {
+				if (3 < s.length() - i && s.startsWith("VIII", i)) {
+					sum += 8;
+					i += 4;
+					continue;
+				}
+
+				if (2 < s.length() - i && s.startsWith("VII", i)) {
+					sum += 7;
+					i += 3;
+					continue;
+				}
+
+				if (1 < s.length() - i && s.startsWith("VI", i)) {
+					sum += 6;
+					i += 2;
+					continue;
+				}
+
+				sum += 5;
+				i += 1;
+				continue;
+			}
+
+			if (0 < s.length() - i && s.charAt(i) == 'L') {
+				if (3 < s.length() - i && s.startsWith("LXXX", i)) {
+					sum += 80;
+					i += 4;
+					continue;
+				}
+
+				if (2 < s.length() - i && s.startsWith("LXX", i)) {
+					sum += 70;
+					i += 3;
+					continue;
+				}
+
+				if (1 < s.length() - i && s.startsWith("LX", i)) {
+					sum += 60;
+					i += 2;
+					continue;
+				}
+
+				sum += 50;
+				i += 1;
+				continue;
+			}
+
+			if (0 < s.length() - i && s.charAt(i) == 'D') {
+				if (3 < s.length() - i && s.startsWith("DCCC", i)) {
+					sum += 800;
+					i += 4;
+					continue;
+				}
+
+				if (2 < s.length() - i && s.startsWith("DCC", i)) {
+					sum += 700;
+					i += 3;
+					continue;
+				}
+
+				if (1 < s.length() - i && s.startsWith("DC", i)) {
+					sum += 600;
+					i += 2;
+					continue;
+				}
+
+				sum += 500;
+				i += 1;
+				continue;
+			}
+
+			if (2 < s.length() - i && s.startsWith("III", i)) {
+				sum += 3;
+				i += 3;
+				continue;
+			}
+
+			if (2 < s.length() - i && s.startsWith("XXX", i)) {
+				sum += 30;
+				i += 3;
+				continue;
+			}
+
+			if (2 < s.length() - i && s.startsWith("CCC", i)) {
+				sum += 300;
+				i += 3;
+				continue;
+			}
+
+			if (2 < s.length() - i && s.startsWith("MMM", i)) {
+				sum += 3000;
+				i += 3;
+				continue;
+			}
+
+			if (1 < s.length() - i && s.startsWith("IV", i)) {
+				sum += 4;
+				i += 2;
+				continue;
+			}
+
+			if (1 < s.length() - i && s.startsWith("IX", i)) {
+				sum += 9;
+				i += 2;
+				continue;
+			}
+
+			if (1 < s.length() - i && s.startsWith("XL", i)) {
+				sum += 40;
+				i += 2;
+				continue;
+			}
+
+			if (1 < s.length() - i && s.startsWith("XC", i)) {
+				sum += 90;
+				i += 2;
+				continue;
+			}
+
+			if (1 < s.length() - i && s.startsWith("CD", i)) {
+				sum += 400;
+				i += 2;
+				continue;
+			}
+
+			if (1 < s.length() - i && s.startsWith("CM", i)) {
+				sum += 900;
+				i += 2;
+				continue;
+			}
+
+			if (1 < s.length() - i && s.startsWith("II", i)) {
+				sum += 2;
+				i += 2;
+				continue;
+			}
+
+			if (1 < s.length() - i && s.startsWith("XX", i)) {
+				sum += 20;
+				i += 2;
+				continue;
+			}
+
+			if (1 < s.length() - i && s.startsWith("CC", i)) {
+				sum += 200;
+				i += 2;
+				continue;
+			}
+
+			if (1 < s.length() - i && s.startsWith("MM", i)) {
+				sum += 2000;
+				i += 2;
+				continue;
+			}
+
+			if (0 < s.length() - i && s.charAt(i) == 'I') {
+				sum += 1;
+				i += 1;
+				continue;
+			}
+
+			if (0 < s.length() - i && s.charAt(i) == 'V') {
+				sum += 5;
+				i += 1;
+				continue;
+			}
+
+			if (0 < s.length() - i && s.charAt(i) == 'X') {
+				sum += 10;
+				i += 1;
+				continue;
+			}
+
+			if (0 < s.length() - i && s.charAt(i) == 'L') {
+				sum += 50;
+				i += 1;
+				continue;
+			}
+
+			if (0 < s.length() - i && s.charAt(i) == 'C') {
+				sum += 100;
+				i += 1;
+				continue;
+			}
+
+			if (0 < s.length() - i && s.charAt(i) == 'D') {
+				sum += 500;
+				i += 1;
+				continue;
+			}
+
+			if (0 < s.length() - i && s.charAt(i) == 'M') {
+				sum += 1000;
+				i += 1;
+				continue;
+			}
+		}
+
+		return sum;
+	}
+
+	/*
 	public int decode(int base, String num) {
 		String s1 = new String();
 		String s2 = new String();
@@ -72,16 +278,5 @@ public class LC0013_RomantoInteger {
     	
     	return num;
     }
-	
-	public static void main(String[] args) {
-		LC0013_RomantoInteger lc = new LC0013_RomantoInteger();
-		
-		System.out.println(lc.romanToInt("III"));
-		System.out.println(lc.romanToInt("IV"));
-		System.out.println(lc.romanToInt("IX"));
-		System.out.println(lc.romanToInt("LVIII"));
-		System.out.println(lc.romanToInt("MCMXCIV"));
-		System.out.println(lc.romanToInt("DCXXI") + " ---> 621");
-		
-	}
+    */
 }
