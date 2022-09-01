@@ -26,5 +26,8 @@ public class LC1448_Count_Good_Nodes_in_Binary_Tree_Test {
         root.left.left = new TreeNode(4);
         root.left.right = new TreeNode(2);
         Assertions.assertThat(test.goodNodes(root)).isEqualTo(3);
+
+        root = new TreeNode(1);
+        Assertions.assertThat(test.goodNodes(root)).isEqualTo(1);
     }
 }
