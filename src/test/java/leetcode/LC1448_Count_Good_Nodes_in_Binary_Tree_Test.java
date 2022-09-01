@@ -19,7 +19,12 @@ public class LC1448_Count_Good_Nodes_in_Binary_Tree_Test {
         root.left.left = new TreeNode(3);
         root.right.left = new TreeNode(1);
         root.right.right = new TreeNode(5);
-
         Assertions.assertThat(test.goodNodes(root)).isEqualTo(4);
+
+        root = new TreeNode(3);
+        root.left = new TreeNode(3);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(2);
+        Assertions.assertThat(test.goodNodes(root)).isEqualTo(3);
     }
 }
