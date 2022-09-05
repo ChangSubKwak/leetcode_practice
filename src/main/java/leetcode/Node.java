@@ -12,6 +12,7 @@ public class Node {
     int maxDepth;
     List<Integer> list;
     ArrayList<Integer>[] levelList;
+	public List<Node> children;
 
     public Node() {}
     
@@ -25,6 +26,11 @@ public class Node {
         right = _right;
         next = _next;
     }
+
+	public Node(int _val, List<Node> _children) {
+		val = _val;
+		children = _children;
+	}
     
 	public void preorder(Node root) {
 		if (root == null) return;
