@@ -5,7 +5,7 @@ import static org.assertj.core.api.Assertions.*;
 import org.junit.jupiter.api.*;
 
 class LC1996_The_Number_of_Weak_Characters_in_the_Game_Test {
-    LC1996_The_Number_of_Weak_Characters_in_the_Game test = new LC1996_The_Number_of_Weak_Characters_in_the_Game();
+    LC1996_The_Number_of_Weak_Characters_in_the_Game_X test = new LC1996_The_Number_of_Weak_Characters_in_the_Game_X();
 
     @Test
     void exampleTest() {
