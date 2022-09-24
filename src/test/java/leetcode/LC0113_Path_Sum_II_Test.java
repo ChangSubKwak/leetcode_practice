@@ -31,5 +31,18 @@ public class LC0113_Path_Sum_II_Test {
 				Arrays.asList(5, 8, 4, 5)
 			)
 		);
+
+		// Example 2
+		root = new TreeNode(1);
+		root.left = new TreeNode(2);
+		root.right = new TreeNode(3);
+
+		Assertions.assertThat(test.pathSum(root, 5)).isEmpty();;
+
+		// Example 3
+		root = new TreeNode(1);
+		root.left = new TreeNode(2);
+
+		Assertions.assertThat(test.pathSum(root, 0)).isEmpty();;
 	}
 }
