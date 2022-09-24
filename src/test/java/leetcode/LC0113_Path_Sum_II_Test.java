@@ -24,7 +24,6 @@ public class LC0113_Path_Sum_II_Test {
 		root.right.right = new TreeNode(4);
 		root.right.right.left = new TreeNode(5);
 		root.right.right.right = new TreeNode(1);
-
 		Assertions.assertThat(test.pathSum(root, 22)).isEqualTo(
 			Arrays.asList(
 				Arrays.asList(5, 4, 11, 2),
@@ -36,13 +35,15 @@ public class LC0113_Path_Sum_II_Test {
 		root = new TreeNode(1);
 		root.left = new TreeNode(2);
 		root.right = new TreeNode(3);
-
-		Assertions.assertThat(test.pathSum(root, 5)).isEmpty();;
+		Assertions.assertThat(test.pathSum(root, 5)).isEmpty();
 
 		// Example 3
 		root = new TreeNode(1);
 		root.left = new TreeNode(2);
+		Assertions.assertThat(test.pathSum(root, 0)).isEmpty();
 
-		Assertions.assertThat(test.pathSum(root, 0)).isEmpty();;
+		root = new TreeNode(1);
+		root.left = new TreeNode(2);
+		Assertions.assertThat(test.pathSum(root, 1)).isEmpty();;
 	}
 }
