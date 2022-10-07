@@ -1,9 +1,8 @@
 package leetcode;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class LC0112_Path_Sum_Test {
 
@@ -21,13 +20,13 @@ public class LC0112_Path_Sum_Test {
 		root.right.left = new TreeNode(13);
 		root.right.right = new TreeNode(4);
 		root.right.right.right = new TreeNode(1);
-		Assertions.assertThat(test.hasPathSum(root, 22)).isTrue();
+		assertThat(test.hasPathSum(root, 22)).isTrue();
 
 		// Example 2
 		root = new TreeNode(1);
 		root.left = new TreeNode(2);
 		root.right = new TreeNode(3);
-		Assertions.assertThat(test.hasPathSum(root, 5)).isFalse();
+		assertThat(test.hasPathSum(root, 5)).isFalse();
 
 	}
 }
