@@ -3,8 +3,6 @@ package leetcode;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.assertj.core.util.Arrays;
-
 public class LC0212_WordSearchII_X {
     public List<String> findWords(char[][] board, String[] words) {
         List<String> res = new ArrayList<>();
@@ -52,16 +50,4 @@ public class LC0212_WordSearchII_X {
         TrieNode[] next = new TrieNode[26];
         String word;
     }
-
-	public static void main(String[] args) {
-		LC0212_WordSearchII_X t = new LC0212_WordSearchII_X();
-		
-		char[][] board = {
-				{ 'o', 'a', 'a', 'n' },
-				{ 'e', 't', 'a', 'e' },
-				{ 'i', 'h', 'k', 'r' },
-				{ 'i', 'f', 'l', 'v' }
-		};
-		System.out.println(t.findWords(board, Arrays.array("oath","pea","eat","rain")));
-	}
 }

@@ -1,7 +1,5 @@
 package leetcode;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 public class LC0132_PalindromePartitioningII_X {
     public int minCut(String s) {
         int length = s.length();
@@ -21,11 +19,4 @@ public class LC0132_PalindromePartitioningII_X {
         }
         return minimumCuttingCount[length];
     }
-	
-	public static void main(String[] args) {
-		LC0132_PalindromePartitioningII_X t = new LC0132_PalindromePartitioningII_X();
-		assertThat(t.minCut("aba")).isEqualTo(1);
-//		assertThat(t.minCut("a")).isEqualTo(0);
-//		assertThat(t.minCut("ab")).isEqualTo(1);
-	}
 }
