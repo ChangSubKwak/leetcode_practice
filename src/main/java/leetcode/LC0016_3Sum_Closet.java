@@ -20,7 +20,7 @@ public class LC0016_3Sum_Closet {
                     left++;
                     continue;
                 }
-                
+
                 right--;
             }
         }
