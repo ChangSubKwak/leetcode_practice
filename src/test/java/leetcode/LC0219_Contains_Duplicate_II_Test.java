@@ -17,6 +17,6 @@ public class LC0219_Contains_Duplicate_II_Test {
     void minimumTotal() {
         assertThat(test.containsNearbyDuplicate(new int[]{1, 2, 3, 1}, 3)).isTrue();
         assertThat(test.containsNearbyDuplicate(new int[]{1, 0, 1, 1}, 1)).isTrue();
-        assertThat(test.containsNearbyDuplicate(new int[]{1, 2, 3, 1, 2, 3}, 2)).isTrue();
+        assertThat(test.containsNearbyDuplicate(new int[]{1, 2, 3, 1, 2, 3}, 2)).isFalse();
     }
 }
