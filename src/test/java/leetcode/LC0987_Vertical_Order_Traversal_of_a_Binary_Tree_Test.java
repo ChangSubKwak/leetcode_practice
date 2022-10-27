@@ -6,8 +6,6 @@ import java.util.*;
 
 import org.junit.jupiter.api.*;
 
-import sun.reflect.generics.tree.*;
-
 class LC0987_Vertical_Order_Traversal_of_a_Binary_Tree_Test {
     LC0987_Vertical_Order_Traversal_of_a_Binary_Tree test = new LC0987_Vertical_Order_Traversal_of_a_Binary_Tree();
     @Test

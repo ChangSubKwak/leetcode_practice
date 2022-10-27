@@ -3,11 +3,7 @@ package leetcode;
 import static org.assertj.core.api.Assertions.*;
 
 import java.util.*;
-import java.util.stream.*;
-
 import org.junit.jupiter.api.*;
-
-import sun.reflect.generics.tree.*;
 
 class LC0102_Binary_Tree_Level_Order_Traversal_Test {
     LC0102_Binary_Tree_Level_Order_Traversal test = new LC0102_Binary_Tree_Level_Order_Traversal();

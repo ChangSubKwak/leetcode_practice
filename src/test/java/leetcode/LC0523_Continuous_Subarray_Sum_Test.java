@@ -9,7 +9,7 @@ public class LC0523_Continuous_Subarray_Sum_Test {
 	void test() {
 		LC0523_Continuous_Subarray_Sum test = new LC0523_Continuous_Subarray_Sum();
 		assertThat(test.checkSubarraySum(new int[]{23, 2, 4, 6, 7}, 6)).isTrue();
-		assertThat(test.checkSubarraySum(new int[]{23, 2, 4, 6, 7}, 6)).isTrue();
-		assertThat(test.checkSubarraySum(new int[]{23, 2, 4, 6, 7}, 6)).isFalse();
+		assertThat(test.checkSubarraySum(new int[]{23, 2, 6, 4, 7}, 6)).isTrue();
+		assertThat(test.checkSubarraySum(new int[]{23, 2, 6, 4, 7}, 13)).isFalse();
 	}
 }
