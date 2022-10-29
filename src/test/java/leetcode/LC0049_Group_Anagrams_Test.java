@@ -11,7 +11,13 @@ public class LC0049_Group_Anagrams_Test {
 	@Test
 	void test() {
 		LC0049_Group_Anagrams test = new LC0049_Group_Anagrams();
-		assertThat(test.groupAnagrams(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"})).isIn(
+
+		List<List<String>> result = test.groupAnagrams(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"});
+		result.forEach(e -> {
+			e.sort(Comparator.naturalOrder());
+		});
+
+		assertThat(result).contains(
 			Arrays.asList("bat"),
 			Arrays.asList("nat", "tan"),
 			Arrays.asList("ate", "eat", "tea")
