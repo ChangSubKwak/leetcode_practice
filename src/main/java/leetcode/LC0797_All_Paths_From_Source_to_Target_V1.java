@@ -3,7 +3,7 @@ package leetcode;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LC0797_All_Paths_From_Source_To_Target {
+public class LC0797_All_Paths_From_Source_to_Target {
     List<List<Integer>> result;
     int size;
     
