@@ -3,7 +3,7 @@ package leetcode;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LC0144_Binary_Tree_Postorder_Traversal {
+public class LC0144_Binary_Tree_Preorder_Traversal {
     private List<Integer> result;
     
     public void recursive(TreeNode root) {
