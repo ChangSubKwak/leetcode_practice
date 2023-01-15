@@ -5,7 +5,7 @@ import static org.assertj.core.api.Assertions.*;
 import org.junit.jupiter.api.*;
 
 class LC2421_Number_of_Good_Paths_Test {
-    LC2421_Number_of_Good_Paths test = new LC2421_Number_of_Good_Paths();
+    LC2421_Number_of_Good_Paths_X test = new LC2421_Number_of_Good_Paths_X();
 
     @Test
     void exampleTest() {
