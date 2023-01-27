@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
+import static org.assertj.core.api.Assertions.*;
+
 class BFSTest {
     
     Map<Integer, List<Integer>> nodes;
@@ -51,11 +53,8 @@ class BFSTest {
     
     @Test
     @DisplayName("노드가 주어졌을 때, 너비탐색 결과를 반환한다")
-    void BFS_test() {
-        nodeInit();
-        System.out.println("nodes = " + nodes);
+    void test() {
         BFS bfs = new BFS();
-        List<Integer> result = bfs.execute(nodes);
-        Assertions.assertThat(result).isEqualTo(Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9));
+        assertThat(bfs.execute(nodes)).isEqualTo(Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9));
     }
 }
