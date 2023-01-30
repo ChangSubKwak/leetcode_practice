@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class LC0462_LFU_Cache_Test {
     @Test
     void test() {
-        LC0462_LFU_Cache.LFUCache test = new LC0462_LFU_Cache.LFUCache(2);
+        LC0462_LFU_Cache_X.LFUCache test = new LC0462_LFU_Cache_X.LFUCache(2);
         test.put(1, 1);
         test.put(2, 2);
         assertThat(test.get(1)).isEqualTo(1);
