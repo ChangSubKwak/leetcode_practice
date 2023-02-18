@@ -2,6 +2,53 @@ package leetcode;
 
 public class LC0067_Add_Binary {
     public String addBinary(String a, String b) {
+        StringBuilder sa = new StringBuilder(a);
+        StringBuilder sb = new StringBuilder(b);
+
+        if (sa.length() < sb.length()) {
+            String temp = sa.toString();
+            sa = sb;
+            sb = new StringBuilder(temp);
+        }
+
+        sa.reverse();
+        sb.reverse();
+
+        int carry = 0;
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < sb.length(); i++) {
+            int num1 = Integer.valueOf(sa.charAt(i) - '0');
+            int num2 = Integer.valueOf(sb.charAt(i) - '0');
+            if (num1 + num2 + carry >= 2) {
+                result.append((num1 + num2 + carry) % 2);
+                carry = 1;
+                continue;
+            }
+            result.append(num1 + num2 + carry);
+            carry = 0;
+        }
+
+        for (int i = sb.length(); i < sa.length(); i++) {
+            int num1 = Integer.valueOf(sa.charAt(i) - '0');
+            if (num1 + carry >= 2) {
+                result.append((num1 + carry) % 2);
+                carry = 1;
+                continue;
+            }
+
+                result.append(num1 + carry);
+            carry = 0;
+        }
+
+        if (carry > 0) {
+            result.append(carry);
+        }
+
+        result.reverse();
+        return result.toString();
+    }
+
+    public String addBinaryV1(String a, String b) {
         StringBuilder sb = new StringBuilder();
         
         int aLen = a.length();
@@ -33,96 +80,5 @@ public class LC0067_Add_Binary {
         
         return sb.toString();
     }
-	
-	/*
-    public String addBinary(String a, String b) {
-		if (a.length() < b.length()) {
-		    String temp = a;
-		    a = b;
-		    b = temp;
-		}
-		  
-		int lenA = a.length();
-		int lenB = b.length();
-		  
-		StringBuilder sb = new StringBuilder(b);
-		sb.reverse();
-		for (int i = 0 ; i < lenA - lenB ; i++) {
-		    sb.append(0);
-		}
-		b = sb.reverse().toString();
-		sb.setLength(0);
-		  
-		int carry = 0;
-		for (int i = lenA - 1 ; i >= 0; i--) {
-		    int iA = a.charAt(i) - '0';
-			int iB = b.charAt(i) - '0';
-			
-			if (iA + iB + carry >= 2) {
-				sb.append((iA + iB + carry)%2);
-				carry = 1;
-			} else {
-				sb.append((iA + iB + carry)%2);
-				carry = 0;
-		    }
-		}
-		  
-		if (carry == 1) sb.append(1);
-		  
-		return sb.reverse().toString();
-    }
-	*/
-	  
-	/* 
-    public String addBinary(String a, String b) {
-		if (a.length() < b.length()) {
-			String temp = a;
-			a = b;
-			b = temp;
-		}
-		
-		int lenA = a.length();
-		int lenB = b.length();
-		
-		StringBuilder sb = new StringBuilder();
-		int carry = 0;
-		for (int i = lenB - 1 ; i >= 0; i--) {
-			//int iA = (lenA == lenB) ? a.charAt(i) - '0' : a.charAt(lenA - i - 1) - '0';
-			int iA = a.charAt(i) - '0';
-			int iB = b.charAt(i) - '0';
-			
-			if (iA + iB + carry >= 2) {
-				sb.append((iA + iB + carry)%2);
-				carry = 1;
-			} else {
-				sb.append((iA + iB + carry)%2);
-				carry = 0;
-			}
-		}
-		
-		for (int i = lenA - lenB - 1 ; i >= 0; i--) {
-			int iA = a.charAt(i) - '0';
-			if (iA + carry >= 2) {
-				sb.append((iA + carry)%2);
-				carry = 1;
-			} else {
-				sb.append((iA + carry)%2);
-				carry = 0;
-			}
-		}
-		
-		if (carry == 1)
-			sb.append(1);
-		
-	    return sb.reverse().toString();
-	}
-	*/
-	
-	public static void main(String[] args) {
-		LC0067_Add_Binary t = new LC0067_Add_Binary();
-		System.out.println(t.addBinary("110010","10111"));
-		System.out.println(t.addBinary("100","110010"));
-		System.out.println(t.addBinary("11","1"));
-		System.out.println(t.addBinary("1010","1011"));
-	}
+
 }
