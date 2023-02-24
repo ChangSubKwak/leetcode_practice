@@ -4,8 +4,6 @@ import static org.assertj.core.api.Assertions.*;
 
 import org.junit.jupiter.api.*;
 
-import sun.reflect.generics.tree.*;
-
 public class LC0226_Invert_Binary_Test {
     @Test
     void test() {
