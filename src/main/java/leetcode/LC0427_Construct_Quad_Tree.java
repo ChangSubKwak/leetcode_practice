@@ -38,7 +38,7 @@ public class LC0427_Construct_Quad_Tree {
     }
 
     //*
-    static class Node {
+    public static class Node {
         public boolean val;
         public boolean isLeaf;
         public Node topLeft;
