@@ -24,9 +24,7 @@ public class LC1345_Jump_Game_IV {
         HashSet<Integer> other = new HashSet<>(); // store layers from end
         other.add(n - 1);
 
-        // when current layer exists
         while (!curs.isEmpty()) {
-            // search from the side with fewer nodes
             if (curs.size() > other.size()) {
                 HashSet<Integer> tmp = curs;
                 curs = other;
@@ -35,10 +33,7 @@ public class LC1345_Jump_Game_IV {
 
             HashSet<Integer> nex = new HashSet<>();
 
-            // iterate the layer
             for (int node : curs) {
-
-                // check same value
                 for (int child : graph.get(arr[node])) {
                     if (other.contains(child)) {
                         return step + 1;
@@ -49,10 +44,8 @@ public class LC1345_Jump_Game_IV {
                     }
                 }
 
-                // clear the list to prevent redundant search
                 graph.get(arr[node]).clear();
 
-                // check neighbors
                 if (other.contains(node + 1) || other.contains(node - 1)) {
                     return step + 1;
                 }
