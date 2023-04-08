@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class LC0133_Clone_Graph {
-	class Node {
+	static class Node {
 	    public int val;
 	    public List<Node> neighbors;
 	    public Node() {
@@ -22,50 +22,30 @@ public class LC0133_Clone_Graph {
 	        neighbors = _neighbors;
 	    }
 	}
-	
-    private Map<Integer, Node> nodeMap;
-    
-    public void doRecursive(Node node) {
-        if (node == null || nodeMap.containsKey(node.val)) {
+    private Map<Integer, Node> visited;
+
+    private void depthFirstSearch(Node node) {
+        if (node == null || visited.containsKey(node.val)) {
             return;
         }
-            
-        nodeMap.put(node.val, new Node(node.val));
-        Node main = nodeMap.get(node.val);
-        for (int i = 0; i < node.neighbors.size(); i++) {
-            doRecursive(node.neighbors.get(i));
-            Node current = nodeMap.get(node.neighbors.get(i).val);
-            main.neighbors.add(current);
+
+        visited.put(node.val, new Node(node.val));
+        Node parent = visited.get(node.val);
+        int size = node.neighbors.size();
+        for (int i = 0; i < size; i++) {
+            Node neighbor = node.neighbors.get(i);
+            depthFirstSearch(neighbor);
+
+            int value = neighbor.val;
+            Node child = visited.get(value);
+
+            parent.neighbors.add(child);
         }
     }
-    
-    public Node cloneGraph(Node node) {
-        nodeMap = new HashMap<>();
-        doRecursive(node);
-        
-        return nodeMap.get(1);
-    }
-	
-	/*
-	class Solution {
-	    private HashMap<Integer, Node> map = new HashMap<>();
-	    public Node cloneGraph(Node node) {
-	        return clone(node);
-	    }
 
-	    private Node clone(Node node) {
-	        if (node == null) return null;
-	        
-	        if (map.containsKey(node.val)) {
-	            return map.get(node.val);
-	        }
-	        Node clone = new Node(node.val);
-	        map.put(clone.val, clone);
-	        for (Node neighbor : node.neighbors) {
-	            clone.neighbors.add(clone(neighbor));
-	        }
-	        return clone;
-	    }
-	}
-	*/
+    public Node cloneGraph(Node node) {
+        visited = new HashMap<>();
+        depthFirstSearch(node);
+        return visited.get(1);
+    }
 }
