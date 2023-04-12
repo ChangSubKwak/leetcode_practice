@@ -1,9 +1,28 @@
 package leetcode;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 
 public class LC0071_Simplify_Path {
-    public String simplifyPath(String path) {
+	public String simplifyPath(String path) {
+		List<String> pathNames = Arrays.stream(path.split("/"))
+			.filter(e -> !e.equals(""))
+			.filter(e -> !e.equals("."))
+			.toList();
+
+     	List<String> simplified = new ArrayList<>();
+		 for (String name : pathNames) {
+			 if (name.equals("..") && simplified.size() > 0) {
+				 simplified.remove(simplified.size() - 1);
+				 continue;
+			 }
+			 simplified.add(name);
+		 }
+		 return "/" + String.join("/", simplified);
+ 	}
+    public String simplifyPath_V1(String path) {
     	LinkedList<String> ll = new LinkedList<>();
     	String[] newPath = path.split("\\/+");
     	
