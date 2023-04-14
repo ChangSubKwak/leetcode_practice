@@ -4,6 +4,21 @@ import java.util.Stack;
 
 public class LC0946_Validate_Stack_Sequences {
     public boolean validateStackSequences(int[] pushed, int[] popped) {
+        Stack<Integer> stack = new Stack<>();
+        int i = 0;
+
+        for (int pushedValue : pushed) {
+            stack.push(pushedValue);
+            while(!stack.isEmpty() && stack.peek() == popped[i]) {
+                stack.pop();
+                i++;
+            }
+        }
+
+        return stack.isEmpty();
+    }
+
+    public boolean validateStackSequences_V1(int[] pushed, int[] popped) {
         Stack<Integer> st = new Stack<>();
         
         int pushIndex = 0;
