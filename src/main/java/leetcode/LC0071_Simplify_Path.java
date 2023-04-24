@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class LC0071_Simplify_Path {
 	public String simplifyPath(String path) {
 		List<String> pathNames = Arrays.stream(path.split("/"))
 			.filter(e -> !e.equals(""))
 			.filter(e -> !e.equals("."))
-			.toList();
+			.collect(Collectors.toList());
 
      	List<String> simplified = new ArrayList<>();
 		 for (String name : pathNames) {
