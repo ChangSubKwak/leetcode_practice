@@ -2,7 +2,6 @@ package leetcode;
 
 import static org.assertj.core.api.Assertions.*;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.*;
 
 public class LC2466_Count_Ways_To_Build_Good_Strings_Test {
