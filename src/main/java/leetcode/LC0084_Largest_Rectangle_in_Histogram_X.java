@@ -1,8 +1,5 @@
 package leetcode;
 
-/*
- * 각 높이별로 영향을 미치는 인덱스 값을 구하는 것이 핵심 
- */
 
 public class LC0084_Largest_Rectangle_in_Histogram_X {
 	public static int largestRectangleArea(int[] height) {
