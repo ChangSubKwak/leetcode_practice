@@ -1,5 +1,8 @@
 package leetcode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ListNode {
 	int val;
 	ListNode next;
@@ -25,6 +28,17 @@ public class ListNode {
 			l = l.next;
 		}
 		return t;
+	}
+
+	public int[] getArray() {
+		List<Integer> list = new ArrayList<>();
+		ListNode head = next;
+		while (head != null) {
+			list.add(head.val);
+			head = head.next;
+		}
+
+		return list.stream().mapToInt(i -> i).toArray();
 	}
 	
 	public static void print(ListNode head) {

@@ -40,7 +40,7 @@ public class KMP_Algorithm {
             }
 
             boolean isMatched = haystack.charAt(i) == needle.charAt(lengthOfMatched);
-            
+
             if (isMatched && lengthOfMatched == lengthOfPattern - 1) {
                 return i - lengthOfPattern + 1;
             }
