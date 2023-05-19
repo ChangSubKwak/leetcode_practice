@@ -1,6 +1,6 @@
 package leetcode;
 
-public class LC0785_Is_Graph_Bipartite_X {
+public class LC0785_Is_Graph_Bipartite {
 	public boolean isBipartite(int[][] graph) {
 		int n = graph.length;
 		int[] colors = new int[n];
