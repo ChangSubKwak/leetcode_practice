@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class LC0703_Kth_Largest_Element_in_a_Stream {
-	class KthLargest {
+	static class KthLargest {
 	    private List<Integer> list;
 	    private int k;
 		
