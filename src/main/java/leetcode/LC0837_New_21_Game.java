@@ -5,4 +5,3 @@ public class LC0837_New_21_Game {
         return 0;
     }
 }
-cd /d/
