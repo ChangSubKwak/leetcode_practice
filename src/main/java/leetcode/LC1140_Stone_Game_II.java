@@ -6,22 +6,6 @@ public class LC1140_Stone_Game_II {
             return 0;
         }
         
-        if (dp[turn][index][m] != -1) {
-            return dp[turn][index][m];
-        }
-        
-        int result = turn == 1 ? 1000000 : -1;
-        int s = 0;
-        for (int x = 1; x <= Math.min(2 * m, piles.length - index); x++) {
-            s += piles[index + x - 1];
-            if (turn == 0) {
-                result = Math.max(result, s + recur(piles, dp, 1, index + x, Math.max(m, x)));
-            } else {
-                result = Math.min(result,     recur(piles, dp, 0, index + x, Math.max(m, x)));
-            }
-        }
-        
-        dp[turn][index][m] = result;
         return dp[turn][index][m];
     }
 
