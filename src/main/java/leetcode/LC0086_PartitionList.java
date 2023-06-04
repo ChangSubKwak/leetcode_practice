@@ -28,10 +28,8 @@ public class LC0086_PartitionList {
         	
         	if (prevI == null || currI == null) return dummy.next;
         	
-        	// 노드 끊기
         	prevI.next = currI.next;
         	
-        	// 노드 연결
         	currI.next = currS;
         	prevS.next = currI;
         	prevS = prevS.next;
