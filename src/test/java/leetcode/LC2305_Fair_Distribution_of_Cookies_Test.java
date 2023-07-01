@@ -11,5 +11,6 @@ class LC2305_Fair_Distribution_of_Cookies_Test {
 
         assertThat(test.distributeCookies(new int[]{8, 15, 10, 20, 8}, 2)).isEqualTo(31);
         assertThat(test.distributeCookies(new int[]{6, 1, 3, 2, 2, 4, 1, 2}, 3)).isEqualTo(7);
+        assertThat(test.distributeCookies(new int[]{20, 13, 18}, 2)).isEqualTo(31);
     }
 }
