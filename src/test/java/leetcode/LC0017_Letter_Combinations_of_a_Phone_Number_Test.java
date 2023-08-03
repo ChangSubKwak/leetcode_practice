@@ -11,7 +11,7 @@ public class LC0017_Letter_Combinations_of_a_Phone_Number_Test {
 	void test() {
 		LC0017_Letter_Combinations_of_a_Phone_Number test = new LC0017_Letter_Combinations_of_a_Phone_Number();
 		assertThat(test.letterCombinations("23")).isEqualTo(Arrays.asList("ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"));
-		assertThat(test.letterCombinations("")).isEqualTo(Arrays.asList(""));
+		assertThat(test.letterCombinations("")).isEqualTo(Arrays.asList());
 		assertThat(test.letterCombinations("2")).isEqualTo(Arrays.asList("a", "b", "c"));
 	}
 }

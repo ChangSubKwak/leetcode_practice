@@ -3,7 +3,7 @@ package leetcode;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LC0017_LetterCombinationsofaPhoneNumber {
+public class LC0017_Letter_Combinations_of_a_Phone_Number {
 	public static char[][] baseChar = new char[10][3];
 	public static String digits;
 	
@@ -42,10 +42,4 @@ public class LC0017_LetterCombinationsofaPhoneNumber {
     	}
         return res;
     }
-	
-	public static void main(String[] args) {
-		LC0017_LetterCombinationsofaPhoneNumber lc = new LC0017_LetterCombinationsofaPhoneNumber();
-		
-		System.out.println(lc.letterCombinations("23"));
-	}
 }
