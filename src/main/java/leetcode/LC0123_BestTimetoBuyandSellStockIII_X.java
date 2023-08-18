@@ -12,8 +12,8 @@ public class LC0123_BestTimetoBuyandSellStockIII_X {
     	
     	for (int i = 0; i < size ; i++) {
     		b1 = Math.min(b1, prices[i]);
-    		s1 = Math.max(s1, prices[i] - b1);		// 누적된 수익 --> prices[i] - b1
-    		b2 = Math.min(b2, prices[i] - s1);		// 누적된 지출 --> prices[i] - s1 --> 앞에서 최대값을 구했기 때문 
+    		s1 = Math.max(s1, prices[i] - b1);
+    		b2 = Math.min(b2, prices[i] - s1);
     		s2 = Math.max(s2, prices[i] - b2);
     		
     		System.out.printf("prices[%d] = %d --> ", i, prices[i]);
