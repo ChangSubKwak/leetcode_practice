@@ -17,18 +17,17 @@ public class LC0187_RepeatedDNASequences {
 	}
 	
     public void rotate(int[] nums, int k) {
-    	// ÀüÃ¼¸¦ °Å²Ù·Î
     	// 1, 2, 3, 4, 5, 6, 7 --> 7, 6, 5, 4, 3, 2, 1
     	int length = nums.length;
     	swap(nums, 0, length);
     	System.out.println(Arrays.toString(nums));
 
-    	// 0 ºÎÅÍ k -1 ¹øÂ° ±îÁö °Å²Ù·Î
+    	// 0 ï¿½ï¿½ï¿½ï¿½ k -1 ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ ï¿½Å²Ù·ï¿½
     	// 5, 6, 7, 4, 3, 2, 1
     	swap(nums, 0, k);
     	System.out.println(Arrays.toString(nums));
 
-    	// k¹øÂ° ºÎÅÍ ¸¶Áö¸· ±îÁö °Å²Ù·Î
+    	// kï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Å²Ù·ï¿½
     	// 5, 6, 7, 1, 2, 3, 4
     	swap(nums, k, length);
     	System.out.println(Arrays.toString(nums));
