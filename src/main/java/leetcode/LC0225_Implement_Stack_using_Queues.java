@@ -1,10 +1,9 @@
 package leetcode;
 
 public class LC0225_Implement_Stack_using_Queues {
-    private int[] stack;
-    private int topIndex;
-    
-    class MyStack {
+    public static class MyStack {
+		private int[] stack;
+		private int topIndex;
     
 	    public MyStack() {
 	        stack = new int[100];
