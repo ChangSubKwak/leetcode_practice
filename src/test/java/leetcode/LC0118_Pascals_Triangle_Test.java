@@ -1,23 +1,16 @@
 package leetcode;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.*;
 
 import java.util.Arrays;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.jupiter.api.Test;
 
 class LC0118_Pascals_Triangle_Test {
-    LC0118_Pascals_Triangle test;
-    TreeNode one;
-    
-    @BeforeEach
-    void setUp() {
-        test = new LC0118_Pascals_Triangle();
-    }
-    
+
     @Test
     void test() {
+        LC0118_Pascals_Triangle test = new LC0118_Pascals_Triangle();
         assertThat(test.generate(5)).isEqualTo(Arrays.asList(
             Arrays.asList(1),
             Arrays.asList(1, 1),
