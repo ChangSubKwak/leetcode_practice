@@ -23,8 +23,6 @@ public class LC0135_Candy {
             }
         }
 
-        // System.out.println(Arrays.toString(dp));
-
         return Arrays.stream(dp).sum();
     }
 }
