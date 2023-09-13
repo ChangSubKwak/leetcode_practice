@@ -1,30 +1,30 @@
 package leetcode;
 
 import java.util.Arrays;
-import java.util.Collections;
 
-public class LC0135_Candy_X {
+public class LC0135_Candy {
     public int candy(int[] ratings) {
-        int[] candies = new int[ratings.length];
-        Arrays.fill(candies, 1);
-        boolean hasChanged = true;
-        while (hasChanged) {
-            hasChanged = false;
-            for (int i = 0; i < ratings.length; i++) {
-                if (i != ratings.length - 1 && ratings[i] > ratings[i + 1] && candies[i] <= candies[i + 1]) {
-                    candies[i] = candies[i + 1] + 1;
-                    hasChanged = true;
-                }
-                if (i > 0 && ratings[i] > ratings[i - 1] && candies[i] <= candies[i - 1]) {
-                    candies[i] = candies[i - 1] + 1;
-                    hasChanged = true;
-                }
+        int length = ratings.length;
+        int[] dp = new int[length];
+
+        Arrays.fill(dp, 1);
+
+        // toward right scan
+        for (int i = 1; i < length; i++) {
+            if (ratings[i - 1] < ratings[i]) {
+                dp[i] = dp[i - 1] + 1;
             }
         }
-        int sum = 0;
-        for (int candy : candies) {
-            sum += candy;
+
+        // toward left scan
+        for (int i = length - 2; i >= 0; i--) {
+            if (ratings[i] > ratings[i + 1]) {
+                dp[i] = Math.max(dp[i], dp[i + 1] + 1);
+            }
         }
-        return sum;
+
+        // System.out.println(Arrays.toString(dp));
+
+        return Arrays.stream(dp).sum();
     }
 }
