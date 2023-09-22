@@ -2,41 +2,22 @@ package leetcode;
 
 public class LC0392_Is_Subsequence {
     public boolean isSubsequence(String s, String t) {
-        if (s.length() == 0) {
-            return true;
-        }
-        
-        int[] sc = new int[26];
-        int[] tc = new int[26];
-        
-        for (int i = 0; i < s.length(); i++) {
-            sc[s.charAt(i) - 'a']++;
-        }
-        
-        for (int i = 0; i < t.length(); i++) {
-            tc[t.charAt(i) - 'a']++;
-        }
-        
-        for (int i = 0; i < 26; i++) {
-            if (sc[i] > tc[i]) {
-                return false;
+        int pos1 = 0;
+        int pos2 = 0;
+
+        while (pos1 < s.length() && pos2 < t.length()) {
+            // System.out.println("pos1 = " + pos1 + " | pos2 = " + pos2);
+            if (s.charAt(pos1) == t.charAt(pos2)) {
+                pos1++;
+                pos2++;
+                continue;
+            }
+
+            while (pos2 < t.length() && s.charAt(pos1) != t.charAt(pos2)) {
+                pos2++;
             }
         }
-        
-        int si = 0;
-        int ti = 0;
-        
-        while(si < s.length() && ti < t.length()) {
-            while(ti < t.length() && s.charAt(si) != t.charAt(ti)) {
-                ti++;
-            }
-            si++;
-        }
-        
-        if (ti >= t.length()) {
-            return false;
-        }
-        
-        return true;
+
+        return pos1 >= s.length();
     }
 }
