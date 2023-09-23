@@ -1,23 +1,25 @@
 package leetcode;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class LC1048_Longest_String_Chain {
-    private List<List<String>> result;
-
-    private void recur(String[] words, int i) {
-
-    }
-
     public int longestStrChain(String[] words) {
-        int length = words.length;
-
-        for (int i = 0; i < length; i++) {
-            result.add(new ArrayList<>());
-            recur(words, i);
+        Map<String, Integer> dp = new HashMap<>();
+        Arrays.sort(words, Comparator.comparingInt(String::length));
+        int result = 0;
+        for (String word : words) {
+            int longestLength = 0;
+            for (int i = 0; i < word.length(); ++i) {
+                String exceptOne = word.substring(0, i) + word.substring(i + 1);
+                longestLength = Math.max(longestLength, dp.getOrDefault(exceptOne, 0) + 1);
+            }
+            dp.put(word, longestLength);
+            result = Math.max(result, longestLength);
         }
-
-        return 4;
+        return result;
     }
 }
