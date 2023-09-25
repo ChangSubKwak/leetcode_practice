@@ -6,7 +6,6 @@ public class LC0392_Is_Subsequence {
         int pos2 = 0;
 
         while (pos1 < s.length() && pos2 < t.length()) {
-            // System.out.println("pos1 = " + pos1 + " | pos2 = " + pos2);
             if (s.charAt(pos1) == t.charAt(pos2)) {
                 pos1++;
                 pos2++;
