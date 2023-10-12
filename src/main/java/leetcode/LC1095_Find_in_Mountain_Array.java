@@ -7,11 +7,11 @@ public class LC1095_Find_in_Mountain_Array {
         int low = 1;
         int high = length - 2;
         while (low != high) {
-            int testIndex = (low + high) / 2;
-            if (mountainArray.get(testIndex) < mountainArray.get(testIndex + 1)) {
-                low = testIndex + 1;
+            int mid = (low + high) / 2;
+            if (mountainArray.get(mid) < mountainArray.get(mid + 1)) {
+                low = mid + 1;
             } else {
-                high = testIndex;
+                high = mid;
             }
         }
         int peakIndex = low;
@@ -19,11 +19,11 @@ public class LC1095_Find_in_Mountain_Array {
         low = 0;
         high = peakIndex;
         while (low != high) {
-            int testIndex = (low + high) / 2;
-            if (mountainArray.get(testIndex) < target) {
-                low = testIndex + 1;
+            int mid = (low + high) / 2;
+            if (mountainArray.get(mid) < target) {
+                low = mid + 1;
             } else {
-                high = testIndex;
+                high = mid;
             }
         }
 
@@ -35,11 +35,11 @@ public class LC1095_Find_in_Mountain_Array {
         low = peakIndex + 1;
         high = length - 1;
         while (low != high) {
-            int testIndex = (low + high) / 2;
-            if (mountainArray.get(testIndex) > target) {
-                low = testIndex + 1;
+            int mid = (low + high) / 2;
+            if (mountainArray.get(mid) > target) {
+                low = mid + 1;
             } else {
-                high = testIndex;
+                high = mid;
             }
         }
 
