@@ -2,26 +2,27 @@ package leetcode;
 
 public class LC1220_Count_Vowels_Permutation {
     public int countVowelPermutation(int n) {
-        long[][] dp = new long[n + 1][5];
         int MOD = 1000_000_007;
+        long previousA = 1;
+        long previousE = 1;
+        long previousI = 1;
+        long previousO = 1;
+        long previousU = 1;
 
-        for(int i = 0; i < 5; i++) {
-            dp[1][i] = 1;
+        for (int x = 1; x < n; x++) {
+            long currentA = previousE;
+            long currentE = (previousA + previousI) % MOD;
+            long currentI = (previousA + previousE + previousO + previousU) % MOD;
+            long currentO = (previousI + previousU) % MOD;
+            long currentU = previousA;
+
+            previousA = currentA;
+            previousE = currentE;
+            previousI = currentI;
+            previousO = currentO;
+            previousU = currentU;
         }
 
-        for(int i = 1; i < n; i++) {
-            dp[i+1][0] = (dp[i][1] + dp[i][2] + dp[i][4]) % MOD;
-            dp[i+1][1] = (dp[i][0] + dp[i][2]) % MOD;
-            dp[i+1][2] = (dp[i][1] + dp[i][3]) % MOD;
-            dp[i+1][3] = dp[i][2];
-            dp[i+1][4] = (dp[i][2] + dp[i][3]) % MOD;
-        }
-
-        int result = 0;
-        for(int i = 0; i < 5; i++) {
-            result = (result + (int)dp[n][i]) % MOD;
-        }
-
-        return result;
+        return (int)((previousA + previousE + previousI + previousO + previousU) % MOD);
     }
 }
