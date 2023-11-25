@@ -10,7 +10,7 @@ public class LC0005_Longest_Palindromic_Substring_Test {
 	@Test
 	void test() {
 		LC0005_Longest_Palindromic_Substring test = new LC0005_Longest_Palindromic_Substring();
-		
+
 		assertThat(test.longestPalindrome("babad")).isEqualTo("bab");
 		assertThat(test.longestPalindrome("cbbd")).isEqualTo("bb");
 		assertThat(test.longestPalindrome("a")).isEqualTo("a");
