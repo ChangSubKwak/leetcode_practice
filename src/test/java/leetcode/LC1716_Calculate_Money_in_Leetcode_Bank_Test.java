@@ -4,8 +4,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class LC1717_Calculate_Money_in_Leetcode_Bank_Test {
-    LC1717_Calculate_Money_in_Leetcode_Bank test = new LC1717_Calculate_Money_in_Leetcode_Bank();
+class LC1716_Calculate_Money_in_Leetcode_Bank_Test {
+    LC1716_Calculate_Money_in_Leetcode_Bank test = new LC1716_Calculate_Money_in_Leetcode_Bank();
 
     @Test
     void exampleTest() {
