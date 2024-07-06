@@ -49,4 +49,37 @@ public class ListNode {
 			t = t.next;
 		}
 	}
+
+	public int getLength() {
+		int length = 0;
+
+		ListNode head = this;
+		while (head != null) {
+			length++;
+			head = head.next;
+		}
+
+		return length;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		ListNode source = this;
+		ListNode target = (ListNode)obj;
+
+		if (source.getLength() != target.getLength()) {
+			return false;
+		}
+
+		while (source != null) {
+			if (source.val != target.val) {
+				return false;
+			}
+			source = source.next;
+			target = target.next;
+		}
+
+		return true;
+	}
+
 }
