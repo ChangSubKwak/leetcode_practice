@@ -16,11 +16,11 @@ public class LC0432_All_O_one_Data_Structure {
         }
 
         public String getMaxKey() {
-
+            return "";
         }
 
         public String getMinKey() {
-
+            return "";
         }
     }
 }
