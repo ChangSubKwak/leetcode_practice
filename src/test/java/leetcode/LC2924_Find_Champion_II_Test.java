@@ -18,5 +18,9 @@ class LC2924_Find_Champion_II_Test {
         assertThat(test.findChampion(4, new int[][]{
                 {0, 2}, {1, 3}, {1, 2}
         })).isEqualTo(-1);
+
+        assertThat(test.findChampion(5, new int[][]{
+                {4, 3}, {3, 2}, {2, 1}, {1, 0}
+        })).isEqualTo(4);
     }
 }
