@@ -21,8 +21,12 @@ public class LC2924_Find_Champion_II {
                 champion = i;
                 championcount++;
             }
+
+            if (championcount > 1) {
+                return -1;
+            }
         }
 
-        return championcount == 1 ? champion : -1;
+        return champion;
     }
 }
