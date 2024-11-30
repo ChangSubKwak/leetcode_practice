@@ -8,10 +8,23 @@ public class LC2097_Valid_Arrangement_of_Pairs_Test {
     @Test
     void exampleTest1() {
         LC2097_Valid_Arrangement_of_Pairs test = new LC2097_Valid_Arrangement_of_Pairs();
+
         assertThat(test.validArrangement(new int[][]{
             {5, 1}, {4, 5}, {11, 9}, {9, 4}
         })).isEqualTo(new int[][]{
             {11, 9}, {9, 4}, {4, 5}, {5, 1}
+        });
+
+        assertThat(test.validArrangement(new int[][]{
+            {1, 3}, {3, 2}, {2, 1}
+        })).isEqualTo(new int[][]{
+            {1, 3}, {3, 2}, {2, 1}
+        });
+
+        assertThat(test.validArrangement(new int[][]{
+            {1, 2}, {1, 3}, {2, 1}
+        })).isEqualTo(new int[][]{
+            {1, 2}, {2, 1}, {1, 3}
         });
     }
 }
