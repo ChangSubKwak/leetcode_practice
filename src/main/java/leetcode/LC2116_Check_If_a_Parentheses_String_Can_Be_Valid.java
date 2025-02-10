@@ -1,10 +1,11 @@
 package leetcode;
 
+import java.util.Stack;
+
 public class LC2116_Check_If_a_Parentheses_String_Can_Be_Valid {
     public boolean canBeValid(String s, String locked) {
         int length = s.length();
 
-        // If length of string is odd, return false.
         if (length % 2 == 1) {
             return false;
         }
@@ -12,7 +13,6 @@ public class LC2116_Check_If_a_Parentheses_String_Can_Be_Valid {
         Stack<Integer> openBrackets = new Stack<>();
         Stack<Integer> unlocked = new Stack<>();
 
-        // Iterate through the string to handle '(' and ')'
         for (int i = 0; i < length; i++) {
             if (locked.charAt(i) == '0') {
                 unlocked.push(i);
