@@ -16,10 +16,11 @@ public class LC0416_Partition_Equal_Subset_Sum {
         boolean[] dp = new boolean[sum+1];
         dp[0] = true;
 
-        for (int j : nums) {
-            for (int i = sum; i > 0; i--) {
-                if (i >= j) {
-                    dp[i] = dp[i] || dp[i-j];
+        for (int num : nums) {
+            for (int currentSum = sum; currentSum >= num; currentSum--) {
+                dp[currentSum] = dp[currentSum] || dp[currentSum - num];
+                if (dp[currentSum]) {
+                    return true;
                 }
             }
         }
