@@ -2,6 +2,12 @@ package leetcode;
 
 public class LC1920_Build_Array_from_Permutation {
     public int[] buildArray(int[] nums) {
-        return null;
+        int[] result = new int[nums.length];
+
+        for (int i = 0; i < nums.length; i++) {
+            result[i] = nums[nums[i]];
+        }
+
+        return result;
     }
 }
