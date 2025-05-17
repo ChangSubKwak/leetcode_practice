@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class LC0075_SortColors {
+public class LC0075_Sort_Colors {
     public void setZeroes(int[][] matrix) {
         int row = matrix.length;
         int col = matrix[0].length;
@@ -28,7 +28,7 @@ public class LC0075_SortColors {
     }
     
 	public static void main(String[] args) {
-		LC0075_SortColors t = new LC0075_SortColors();
+		LC0075_Sort_Colors t = new LC0075_Sort_Colors();
 		//int[][] matrix = new int[][] {{1,1,1},{1,0,1},{1,1,1}};
 		int[][] matrix = new int[][] {{0,1,2,0},{3,4,5,2},{1,3,1,5}};
 		
