@@ -6,11 +6,11 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class LC0869_Reordered_Power_of_2_Test {
-    LC0869_Reordered_Power_of_2_X test;
+    LC0869_Reordered_Power_of_2 test;
 
     @BeforeEach
     void setUp() {
-        test = new LC0869_Reordered_Power_of_2_X();
+        test = new LC0869_Reordered_Power_of_2();
     }
 
     @Test
