@@ -8,7 +8,7 @@ public class LC1304_Find_N_Unique_Integers_Sum_up_to_Zero {
             return new int[]{0};
         }
 
-        for (int i = 1; i <= (int)(n / 2); i++) {
+        for (int i = 1; i <= (n / 2); i++) {
             result[2 * (i - 1)] = i;
             result[2 * (i - 1) + 1] = -i;
         }
