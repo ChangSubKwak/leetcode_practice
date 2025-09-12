@@ -15,7 +15,7 @@ public class LC3227_Vowels_Game_in_a_String_Test {
 	
 	@Test
 	void test() {
-		assertThat(test.twoSum("leetcoder")).doesAliceWin(true);
-		assertThat(test.twoSum("bbcd")).doesAliceWin(false);
+		assertThat(test.doesAliceWin("leetcoder")).isEqualTo(true);
+		assertThat(test.doesAliceWin("bbcd")).isEqualTo(false);
 	}
 }
