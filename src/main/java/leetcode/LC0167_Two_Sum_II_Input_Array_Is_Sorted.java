@@ -73,8 +73,12 @@ public class LC0167_Two_Sum_II_Input_Array_Is_Sorted {
     	}
     	list.set(0, list.get(0) + 1);
     	list.set(1, list.get(1) + 1);
-    	
-    	return list.stream().mapToInt(Integer::new).toArray();
+
+		int[] returnValue = new int[list.size()];
+		for (int i = 0; i < list.size(); i++) {
+			returnValue[i] = list.get(i);
+		}
+		return returnValue;
     }
 
 }
