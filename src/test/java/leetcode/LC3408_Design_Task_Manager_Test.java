@@ -15,6 +15,12 @@ public class LC3408_Design_Task_Manager_Test {
                 Arrays.asList(3, 103, 15)
         ));
 
+        test.add(4, 101, 5);
+        test.edit(102, 8);
+        assertThat(test.execTop()).isEqualTo(3);
 
+        test.rmv(101);
+        test.add(5, 105, 15);
+        assertThat(test.execTop()).isEqualTo(5);
     }
 }
